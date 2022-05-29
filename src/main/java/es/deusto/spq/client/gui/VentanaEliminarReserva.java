@@ -33,7 +33,7 @@ public class VentanaEliminarReserva extends JFrame {
 	private JPanel contentpane;
 	
 	private JList listaReservas = new JList();
-	private JButton botonReservar = new JButton();
+	private JButton botonEliminarReserva = new JButton();
 	private JButton botonAtras = new JButton();
 	private DefaultListModel contenidoReservas = new DefaultListModel();
 	String emailUsuario = "";
@@ -46,20 +46,17 @@ public class VentanaEliminarReserva extends JFrame {
 		this.setContentPane(contentpane);
 		contentpane.setLayout(null);
 		
-		listaReservas.setBounds(303, 103, 447, 386);
-		contentpane.add(listaReservas);
-
 		JLabel lTitulo = new JLabel("Eliminar reservas");
 		lTitulo.setFont(new Font("Forte", Font.BOLD, 40));
 		lTitulo.setBounds(369, 37, 358, 42);
 		contentpane.add(lTitulo);
 				
-		botonReservar.setForeground(SystemColor.text);
-		botonReservar.setBackground(Color.RED);
-		botonReservar.setBounds(816, 438, 190, 51);
-		botonReservar.setText("Eliminar reservas");
-		botonReservar.setFont(new Font("Goudy Old Style", Font.BOLD, 22));
-		contentpane.add(botonReservar);
+		botonEliminarReserva.setForeground(SystemColor.text);
+		botonEliminarReserva.setBackground(Color.RED);
+		botonEliminarReserva.setBounds(834, 464, 190, 51);
+		botonEliminarReserva.setText("Eliminar reservas");
+		botonEliminarReserva.setFont(new Font("Goudy Old Style", Font.BOLD, 22));
+		contentpane.add(botonEliminarReserva);
 		
 		botonAtras.setForeground(Color.BLACK);
 		botonAtras.setBackground(SystemColor.inactiveCaptionBorder);
@@ -92,11 +89,11 @@ public class VentanaEliminarReserva extends JFrame {
 		}
 		
 		listaReservas.setModel(contenidoReservas);
-		listaReservas.setBounds(81, 95, 447, 386);
+		listaReservas.setBounds(153, 100, 763, 346);
 		contentpane.add(listaReservas);
 		
 		
-		botonReservar.addActionListener(new ActionListener() {
+		botonEliminarReserva.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String IDReserva = "";
@@ -112,6 +109,9 @@ public class VentanaEliminarReserva extends JFrame {
 					if (reservaInstalaciones.getIDReserva().equals(IDReserva)) {
 						Response ban = controller.borrarReserva(reservaInstalaciones);
 						JOptionPane.showMessageDialog(null, "Reserva eliminada correctamente.");
+						VentanaCliente cliente = new VentanaCliente(controller);
+						cliente.setVisible(true);
+						VentanaEliminarReserva.this.dispose();			
 					} 
 					
 					
