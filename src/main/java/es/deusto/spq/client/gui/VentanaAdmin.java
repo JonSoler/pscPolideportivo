@@ -64,7 +64,8 @@ public class VentanaAdmin extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				new VentanaReservasAdmin(controller);
+				VentanaAdmin.this.dispose();			
 			}
 		});
 		
@@ -94,7 +95,7 @@ public class VentanaAdmin extends JFrame{
 		this.setSize(1060, 600);
 		this.setVisible(true);
 		setLocationRelativeTo(null);
-		this.setTitle("Ventana Administrador\r\n");
+		this.setTitle("PSC Polideportivo Admin\r\n");
 
 	}
 	

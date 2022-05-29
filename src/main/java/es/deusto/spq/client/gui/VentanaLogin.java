@@ -91,12 +91,12 @@ public class VentanaLogin extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int valido = controller.loginPolideportivo(textoUsuario.getText(), new String(textoContrasenya.getPassword()));
 				if (valido == 1) {
-					VentanaReservaInstalaciones menu;
+					VentanaCliente menu;
 					try {
 						String usuario = textoUsuario.getText();
 						emailDelUsuario = usuario;
 						//usuarioLogin();
-						menu = new VentanaReservaInstalaciones(controller);
+						menu = new VentanaCliente(controller);
 						menu.setVisible(true);
 						VentanaLogin.this.dispose();
 					} catch (Exception e1) {

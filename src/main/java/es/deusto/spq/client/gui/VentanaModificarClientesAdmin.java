@@ -38,6 +38,7 @@ public class VentanaModificarClientesAdmin extends JFrame {
 	private JTextField textoEmail = new JTextField();
 	private JPasswordField textoContrasenya = new JPasswordField();
 	private JButton botonModificar = new JButton();
+	private JButton botonAtras = new JButton();
 
 	public class JNumberTextField extends JTextField {
 		private static final long serialVersionUID = 1L;
@@ -96,8 +97,15 @@ public class VentanaModificarClientesAdmin extends JFrame {
 		botonModificar.setBackground(new Color(0, 51, 255));
 		botonModificar.setBounds(139, 470, 143, 32);
 		botonModificar.setText("Guardar");
-		botonModificar.setFont(new Font("Goudy Old Style", Font.BOLD, 16));
+		botonModificar.setFont(new Font("Goudy Old Style", Font.BOLD, 17));
 		contentpane.add(botonModificar);
+		
+		botonAtras.setForeground(Color.BLACK);
+		botonAtras.setBackground(SystemColor.inactiveCaptionBorder);
+		botonAtras.setBounds(10, 521, 71, 29);
+		botonAtras.setText("Atrás");
+		botonAtras.setFont(new Font("Goudy Old Style", Font.BOLD, 16));
+		contentpane.add(botonAtras);
 
 		textoDNI.setBounds(214, 125, 143, 20);
 		contentpane.add(textoDNI);
@@ -148,6 +156,14 @@ public class VentanaModificarClientesAdmin extends JFrame {
 				}
 				}
 			});
+		
+		botonAtras.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new VentanaGestionCliente(controller);
+				VentanaModificarClientesAdmin.this.dispose();
+			}
+		});
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(440, 600);

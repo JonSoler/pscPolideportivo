@@ -1,120 +1,112 @@
 package es.deusto.spq.client.gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.SystemColor;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.ModuleLayer.Controller;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
-import es.deusto.spq.client.Cliente;
+public class VentanaGestionCliente extends JFrame {
+	private static final long serialVersionUID = 1L;
 
-public class VentanaGestionCliente extends Cliente{
+	private JPanel contentpane;
+	
+	private JList listaInstalaciones = new JList();
+	private JButton botonEliminarCliente = new JButton();
+	private JButton botonAtras = new JButton();
+	
 
-	private JFrame frame;
-	private JLabel labelNombreDeTabla;
-	Dimension d = Toolkit.getDefaultToolkit ().getScreenSize ();
-	Dimension frameSize = new Dimension (1060, 600);
+	public VentanaGestionCliente(final es.deusto.spq.client.Controller controller) {
+		
+		contentpane = new JPanel();
+		contentpane.setBorder(new EmptyBorder(10, 10, 5, 5));
+		this.setContentPane(contentpane);
+		contentpane.setLayout(null);
+		
+		listaInstalaciones.setBounds(303, 103, 447, 386);
+		contentpane.add(listaInstalaciones);
 
-	/**
-	 * Launch the application
-	 */
+		JLabel lTitulo = new JLabel("Gestion de clientes");
+		lTitulo.setFont(new Font("Forte", Font.BOLD, 40));
+		lTitulo.setBounds(369, 37, 358, 42);
+		contentpane.add(lTitulo);
+				
+		botonEliminarCliente.setForeground(SystemColor.text);
+		botonEliminarCliente.setBackground(Color.RED);
+		botonEliminarCliente.setBounds(857, 458, 149, 31);
+		botonEliminarCliente.setText("Eliminar cliente");
+		botonEliminarCliente.setFont(new Font("Goudy Old Style", Font.BOLD, 18));
+		contentpane.add(botonEliminarCliente);
+		
+		botonAtras.setForeground(Color.BLACK);
+		botonAtras.setBackground(SystemColor.inactiveCaptionBorder);
+		botonAtras.setBounds(22, 492, 90, 42);
+		botonAtras.setText("Atrás");
+		botonAtras.setFont(new Font("Goudy Old Style", Font.BOLD, 19));
+		contentpane.add(botonAtras);
+		
+		JButton btnModificarCliente = new JButton();
+		btnModificarCliente.setText("Modificar cliente");
+		btnModificarCliente.setForeground(Color.WHITE);
+		btnModificarCliente.setFont(new Font("Goudy Old Style", Font.BOLD, 22));
+		btnModificarCliente.setBackground(Color.BLUE);
+		btnModificarCliente.setBounds(816, 373, 190, 51);
+		contentpane.add(btnModificarCliente);
+
+		
+		botonEliminarCliente.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		btnModificarCliente.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VentanaModificarClientesAdmin cliente = new VentanaModificarClientesAdmin(controller);
+				cliente.setVisible(true);
+				VentanaGestionCliente.this.dispose();
+			}
+		});
+				
+		botonAtras.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VentanaAdmin cliente = new VentanaAdmin(controller);
+				cliente.setVisible(true);
+				VentanaGestionCliente.this.dispose();				
+			}
+		});
+
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(1060, 600);
+		this.setVisible(true);
+		setLocationRelativeTo(null);
+		this.setTitle("PSC Polideportivo Admin - Gestion de clientes");
+	}
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					VentanaGestionCliente window = new VentanaGestionCliente(null);
-					window.frame.setVisible(true);
+					window.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
-
-	/**
-	 * Create the application.
-	 */
-	public VentanaGestionCliente(final es.deusto.spq.client.Controller controller) {
-		initialize();
-		
-	}
-
-	/**
-	 * Initialize frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setVisible(true);
-		frame.setBounds (d.width/2 - frameSize.width/2, d.height/2 - frameSize.height/2, frameSize.width, frameSize.height);
-		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBackground(Color.WHITE);
-		frame.setTitle("PSC Polideportivo - Admin");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		JLabel labelDeArriba = new JLabel("Gestion de clientes");
-		labelDeArriba.setHorizontalAlignment(SwingConstants.CENTER);
-		labelDeArriba.setForeground(Color.BLACK);
-		labelDeArriba.setFont(new Font("Forte", Font.BOLD, 30));
-		labelDeArriba.setBackground(Color.ORANGE);
-		frame.getContentPane().add(labelDeArriba, BorderLayout.NORTH);
-		
-		JPanel panelDerecho = new JPanel();
-		panelDerecho.setBackground(Color.WHITE);
-		frame.getContentPane().add(panelDerecho, BorderLayout.EAST);
-		
-		JButton btnModificarCliente = new JButton("Modificar cliente");
-		btnModificarCliente.setFont(new Font("Goudy Old Style", Font.BOLD, 16));
-		btnModificarCliente.setForeground(SystemColor.text);
-		btnModificarCliente.setBackground(new Color(0, 51, 255));
-		panelDerecho.add(btnModificarCliente);
-		
-		JButton btnEliminarCliente = new JButton("Eliminar cliente");
-		btnEliminarCliente.setFont(new Font("Goudy Old Style", Font.BOLD, 16));
-		btnEliminarCliente.setBackground(Color.RED);
-		panelDerecho.add(btnEliminarCliente);
-		
-		JPanel panelListaClientes = new JPanel();
-		frame.getContentPane().add(panelListaClientes, BorderLayout.CENTER);
-		
-		labelNombreDeTabla = new JLabel("Lista de clientes");
-		labelNombreDeTabla.setFont(new Font("Goudy Old Style", Font.BOLD, 16));
-		panelListaClientes.add(labelNombreDeTabla);
-		
-		JList<Object> listdeClientes = new JList<Object>();
-		DefaultListModel<Cliente> modeloListaClientes = new DefaultListModel<>();
-		listdeClientes.getClientProperty(listdeClientes);
-		panelListaClientes.add(listdeClientes);
-		
-		btnModificarCliente.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				VentanaModificarClientesAdmin clientes = new VentanaModificarClientesAdmin(null);
-				clientes.setVisible(true);
-				VentanaGestionCliente.this.frame.dispose();
-				
-			}
-		});
-		
-		btnEliminarCliente.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-	}
-
 }

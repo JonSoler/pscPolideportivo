@@ -118,22 +118,10 @@ public class VentanaReservaInstalaciones extends JFrame {
 		botonAtras.setForeground(Color.BLACK);
 		botonAtras.setBackground(SystemColor.inactiveCaptionBorder);
 		botonAtras.setBounds(22, 492, 90, 42);
-		botonAtras.setText("Atras");
+		botonAtras.setText("Atrás");
 		botonAtras.setFont(new Font("Goudy Old Style", Font.BOLD, 19));
 		contentpane.add(botonAtras);
 
-		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//llamar al metodo de borrar de la base de datos
-				
-			}
-		});
-		btnEliminar.setForeground(new Color(0, 0, 0));
-		btnEliminar.setBackground(Color.RED);
-		btnEliminar.setFont(new Font("Goudy Old Style", Font.PLAIN, 12));
-		btnEliminar.setBounds(628, 460, 92, 28);
-		contentpane.add(btnEliminar);
 		
 		botonReservar.addActionListener(new ActionListener() {
 			@Override
@@ -145,7 +133,9 @@ public class VentanaReservaInstalaciones extends JFrame {
 		botonAtras.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				VentanaCliente cliente = new VentanaCliente(controller);
+				cliente.setVisible(true);
+				VentanaReservaInstalaciones.this.dispose();				
 			}
 		});
 

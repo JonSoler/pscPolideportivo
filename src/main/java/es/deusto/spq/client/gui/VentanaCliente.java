@@ -23,7 +23,7 @@ public class VentanaCliente extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentpane;
 	private JButton botonReservarInstalaciones = new JButton();
-	private JButton botonReservarMaterial = new JButton();
+	private JButton botonEliminarReservas = new JButton();
 	private JButton botonSalir = new JButton();
 	
 	public VentanaCliente(final es.deusto.spq.client.Controller controller){
@@ -45,12 +45,12 @@ public class VentanaCliente extends JFrame{
 		botonReservarInstalaciones.setFont(new Font("Goudy Old Style", Font.BOLD, 23));
 		contentpane.add(botonReservarInstalaciones);
 		
-		botonReservarMaterial.setForeground(SystemColor.text);
-		botonReservarMaterial.setBackground(new Color(0, 51, 255));
-		botonReservarMaterial.setBounds(410, 307, 238, 50);
-		botonReservarMaterial.setText("Reservar material");
-		botonReservarMaterial.setFont(new Font("Goudy Old Style", Font.BOLD, 23));
-		contentpane.add(botonReservarMaterial);
+		botonEliminarReservas.setForeground(SystemColor.text);
+		botonEliminarReservas.setBackground(new Color(0, 51, 255));
+		botonEliminarReservas.setBounds(410, 307, 238, 50);
+		botonEliminarReservas.setText("Eliminar reservas");
+		botonEliminarReservas.setFont(new Font("Goudy Old Style", Font.BOLD, 23));
+		contentpane.add(botonEliminarReservas);
 				
 		botonSalir.setForeground(SystemColor.black);
 		botonSalir.setBackground(SystemColor.inactiveCaptionBorder);
@@ -59,12 +59,12 @@ public class VentanaCliente extends JFrame{
 		botonSalir.setFont(new Font("Goudy Old Style", Font.BOLD, 20));
 		contentpane.add(botonSalir);
 			
-		botonReservarMaterial.addActionListener(new ActionListener() {
+		botonEliminarReservas.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new VentanaReservaMaterial(controller);
+				new VentanaEliminarReserva(controller);
 				VentanaCliente.this.dispose();	
 			}
 		});
@@ -87,7 +87,6 @@ public class VentanaCliente extends JFrame{
 				VentanaLogin inicio = new VentanaLogin(controller);
 				inicio.setVisible(true);
 				VentanaCliente.this.dispose();
-				
 			}
 		});
 
