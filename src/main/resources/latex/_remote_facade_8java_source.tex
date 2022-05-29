@@ -1,0 +1,112 @@
+\hypertarget{_remote_facade_8java_source}{}\doxysection{Remote\+Facade.\+java}
+\label{_remote_facade_8java_source}\index{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/server/RemoteFacade.java@{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/server/RemoteFacade.java}}
+\mbox{\hyperlink{_remote_facade_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.server;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00003}00003 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00005}00005 \textcolor{keyword}{import} javax.ws.rs.Consumes;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00006}00006 \textcolor{keyword}{import} javax.ws.rs.GET;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00007}00007 \textcolor{keyword}{import} javax.ws.rs.POST;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00008}00008 \textcolor{keyword}{import} javax.ws.rs.Path;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00009}00009 \textcolor{keyword}{import} javax.ws.rs.Produces;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00010}00010 \textcolor{keyword}{import} javax.ws.rs.QueryParam;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00011}00011 \textcolor{keyword}{import} javax.ws.rs.core.MediaType;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00012}00012 \textcolor{keyword}{import} javax.ws.rs.core.Response;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00014}00014 \textcolor{keyword}{import} org.apache.log4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00016}00016 \textcolor{keyword}{import} es.deusto.spq.client.Cliente;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00017}00017 \textcolor{keyword}{import} es.deusto.spq.client.Instalacion;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00018}00018 \textcolor{keyword}{import} es.deusto.spq.client.ReservaInstalaciones;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00020}00020 @Path(\textcolor{stringliteral}{"{}/server"{}})}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00021}00021 @Produces(MediaType.APPLICATION\_JSON)}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00022}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade}{00022}} public class \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade}{RemoteFacade}} implements \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade}{IRemoteFacade}}\{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00023}00023     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00024}00024     \textcolor{keyword}{private} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}} dbmanager = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00025}00025     \textcolor{keyword}{private} Logger logger = Logger.getLogger(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade}{RemoteFacade}}.class.getName());}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00027}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_a7f0c2cd4cb344d31f3b9da4bd6bb8cca}{00027}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_a7f0c2cd4cb344d31f3b9da4bd6bb8cca}{RemoteFacade}}() \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00028}00028         this.dbmanager = \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00031}00031     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{long} serialVersionUID = 1L;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00032}00032     \textcolor{keyword}{private} \textcolor{keyword}{static} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade}{RemoteFacade}} instance;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00033}00033     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00034}00034     @POST}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00035}00035     @Path(\textcolor{stringliteral}{"{}/loginPolideportivo"{}})}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00036}00036     @Consumes(MediaType.APPLICATION\_JSON)}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00037}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_ab875df62b6dfbb57759ac23b5c7a5300}{00037}}     public Response loginPolideportivo(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} cliente) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00038}00038         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} user = dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0754fa73d68ba5f3a3d047d9f87f380a}{getUsuario}}(cliente.getEmail());}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00039}00039         \textcolor{keywordflow}{if}(user!= \textcolor{keyword}{null} \&\& user.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a9ccbc450614369fd38ee6783d5c9b030}{getContrasenya}}().equals(cliente.getContrasenya())) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00040}00040             \textcolor{keywordflow}{if}(user.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a9feb2a767e3f209dcb24fb9bbf35d005}{isAdmin}}()) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00041}00041                 \textcolor{keywordflow}{return} Response.status(Response.Status.OK).build();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00042}00042             \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00043}00043                 \textcolor{keywordflow}{return} Response.status(Response.Status.ACCEPTED).build();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00044}00044             \}   }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00045}00045         \}\textcolor{keywordflow}{return} Response.status(Response.Status.BAD\_REQUEST).build();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00047}00047      }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00048}00048     @POST}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00049}00049     @Path(\textcolor{stringliteral}{"{}/registroPolideportivo"{}})}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00050}00050     @Consumes(MediaType.APPLICATION\_JSON)}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00051}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_a661dc44270fb778ebc37a8d63d6eb6a0}{00051}}     public Response agregarClientePolideportivo(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} cliente) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00052}00052         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} c = dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0754fa73d68ba5f3a3d047d9f87f380a}{getUsuario}}(cliente.getEmail());}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00053}00053         \textcolor{keywordflow}{if}(c== \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00054}00054             dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(cliente);}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00055}00055             \textcolor{keywordflow}{return} Response.status(Response.Status.OK).build();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00056}00056         \}\textcolor{keywordflow}{return} Response.status(Response.Status.BAD\_REQUEST).build();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00057}00057     \}}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00058}00058     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00059}00059     @POST}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00060}00060     @Path(\textcolor{stringliteral}{"{}/agregarReservaInstalacion"{}})}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00061}00061     @Consumes(MediaType.APPLICATION\_JSON)}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00062}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_a69649efbfafbc0edc85f17d44328d6c1}{00062}}     public Response agregarReservaInstalacion(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00063}00063         dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(r);}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00064}00064         \textcolor{keywordflow}{return} Response.status(Response.Status.OK).build();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00066}00066     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00067}00067     @GET}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00068}00068     @Path(\textcolor{stringliteral}{"{}/getReservaInstalaciones"{}})}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00069}00069     @Consumes(MediaType.APPLICATION\_JSON)}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00070}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_a1d28a9c5bd1c2a5619a84c9a6f576d75}{00070}}     public \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} buscarReservaInstalacion(@QueryParam("{}IDReserva"{}) String IDReserva) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00071}00071         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r = dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ab559f975bf0c74414ab16deaef4e5d8b}{getReservaInstalaciones}}(IDReserva);}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00073}00073         \textcolor{keywordflow}{return} r;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00075}00075     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00076}00076     @GET}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00077}00077     @Path(\textcolor{stringliteral}{"{}/getInstalaciones"{}})}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00078}00078     @Consumes(MediaType.APPLICATION\_JSON)}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00079}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_a432209335fe56fa4b91caa98a47cf8e3}{00079}}     public List<\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}}> obtenerInstalaciones() \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00080}00080         List<Instalacion> h = dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0d1854b4768087629182f34fb25f4fab}{getInstalaciones}}();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00081}00081     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00082}00082         \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00084}00084     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00085}00085     @POST}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00086}00086     @Path(\textcolor{stringliteral}{"{}/borrarReservaInstalacion"{}})}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00087}00087     @Consumes(MediaType.APPLICATION\_JSON)}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00088}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_a669094e06f7091f64f0f53d900607099}{00088}}     public Response borrarReserva(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reserva) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00089}00089         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r = dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ab559f975bf0c74414ab16deaef4e5d8b}{getReservaInstalaciones}}(reserva.getIDReserva());}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00090}00090         \textcolor{keywordflow}{if}(r!= \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00091}00091             dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aa993273640479a202e001791e1038f95}{borrarReservaInstalacion}}(reserva);}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00092}00092             \textcolor{keywordflow}{return} Response.status(Response.Status.OK).build();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00093}00093         \}\textcolor{keywordflow}{return} Response.status(Response.Status.BAD\_REQUEST).build();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00094}00094     \}}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00095}00095     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00096}00096     @GET}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00097}00097     @Path(\textcolor{stringliteral}{"{}/getReservasInstalaciones"{}})}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00098}00098     @Consumes(MediaType.APPLICATION\_JSON)}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00099}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_remote_facade_a7a523329d98dfdc953f9646a948064ad}{00099}}     public List<\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}> obtenerReservas() \{}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00100}00100         List<ReservaInstalaciones> r = dbmanager.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a913a5ecea041c420ef8a3f2fd01018f2}{getReservasInstalaciones}}();}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00101}00101         }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00102}00102         \textcolor{keywordflow}{return} r;}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00103}00103     \}}
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00104}00104     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00105}00105     }
+\DoxyCodeLine{\Hypertarget{_remote_facade_8java_source_l00106}00106 \}}
+
+\end{DoxyCode}

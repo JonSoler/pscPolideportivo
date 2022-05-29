@@ -1,0 +1,43 @@
+\hypertarget{client_2_get_properties_8java_source}{}\doxysection{Get\+Properties.\+java}
+\label{client_2_get_properties_8java_source}\index{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/client/GetProperties.java@{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/client/GetProperties.java}}
+\mbox{\hyperlink{client_2_get_properties_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.client;}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00003}00003 \textcolor{keyword}{import} java.io.FileNotFoundException;}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00004}00004 \textcolor{keyword}{import} java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00005}00005 \textcolor{keyword}{import} java.io.InputStream;}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00006}00006 \textcolor{keyword}{import} java.util.Properties;}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00008}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_get_properties}{00008}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_get_properties}{GetProperties}} \{}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00009}00009     }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00010}00010     String result = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00011}00011     InputStream inputStream;}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00012}00012  }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00013}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_get_properties_a4ce7bed8ee91b1fc79be9ec62baa8af1}{00013}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_get_properties_a4ce7bed8ee91b1fc79be9ec62baa8af1}{getURL}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00014}00014  }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00015}00015         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00016}00016             Properties prop = \textcolor{keyword}{new} Properties();}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00017}00017             String propFileName = \textcolor{stringliteral}{"{}config.properties"{}};}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00018}00018  }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00019}00019             inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00020}00020  }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00021}00021             \textcolor{keywordflow}{if} (inputStream != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00022}00022                 prop.load(inputStream);}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00023}00023             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00024}00024                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} FileNotFoundException(\textcolor{stringliteral}{"{}property file '"{}} + propFileName + \textcolor{stringliteral}{"{}' not found in the classpath"{}});}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00025}00025             \}}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00026}00026  }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00027}00027             String url = prop.getProperty(\textcolor{stringliteral}{"{}url"{}});}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00028}00028             result = url;}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00029}00029         \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00030}00030             System.out.println(\textcolor{stringliteral}{"{}Exception: "{}} + e);}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00031}00031         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00032}00032             inputStream.close();}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00033}00033         \}}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00034}00034         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{client_2_get_properties_8java_source_l00037}00037 \}}
+
+\end{DoxyCode}

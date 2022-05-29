@@ -1,0 +1,116 @@
+\hypertarget{_reserva_instalaciones_8java_source}{}\doxysection{Reserva\+Instalaciones.\+java}
+\label{_reserva_instalaciones_8java_source}\index{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/client/ReservaInstalaciones.java@{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/client/ReservaInstalaciones.java}}
+\mbox{\hyperlink{_reserva_instalaciones_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00001}00001     \textcolor{keyword}{package }es.deusto.spq.client;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00003}00003 \textcolor{keyword}{import} javax.jdo.annotations.Inheritance;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00004}00004 \textcolor{keyword}{import} javax.jdo.annotations.InheritanceStrategy;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00005}00005 \textcolor{keyword}{import} javax.jdo.annotations.PersistenceCapable;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00006}00006 \textcolor{keyword}{import} javax.jdo.annotations.PrimaryKey;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00008}00008 @PersistenceCapable}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00009}00009 @Inheritance(strategy=InheritanceStrategy.NEW\_TABLE)}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00010}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{00010}} public class \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00011}00011     @PrimaryKey}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00012}00012     \textcolor{keyword}{private} String IDReserva;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00013}00013     \textcolor{keyword}{private} String IDInstalacion;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00014}00014     \textcolor{keyword}{private} String emailUsuario;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00015}00015     \textcolor{keyword}{private} \textcolor{keywordtype}{int} anyo;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00016}00016     \textcolor{keyword}{private} \textcolor{keywordtype}{int} mes;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00017}00017     \textcolor{keyword}{private} \textcolor{keywordtype}{int} dia;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00018}00018     \textcolor{keyword}{private} \textcolor{keywordtype}{int} hora;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00019}00019     }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00030}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a5de5735ea3e7408980229f8aaa4733a4}{00030}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a5de5735ea3e7408980229f8aaa4733a4}{ReservaInstalaciones}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00031}00031         super();}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00032}00032         IDReserva = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00033}00033         IDInstalacion = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00034}00034         this.emailUsuario = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00035}00035         this.anyo = 2022;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00036}00036         this.mes = 3;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00037}00037         this.dia = 29;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00038}00038         this.hora = 8;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00040}00040     }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00041}00041         }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00042}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a817bd9314b2e3c1fccacb3aeb558da4e}{00042}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a817bd9314b2e3c1fccacb3aeb558da4e}{ReservaInstalaciones}}(String iDReserva, String iDInstalacion, String emailUsuario, \textcolor{keywordtype}{int} anyo, \textcolor{keywordtype}{int} mes, \textcolor{keywordtype}{int} dia, \textcolor{keywordtype}{int} hora) \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00043}00043         super();}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00044}00044         IDReserva = iDReserva;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00045}00045         IDInstalacion = iDInstalacion;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00046}00046         this.emailUsuario = emailUsuario;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00047}00047         this.anyo = anyo;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00048}00048         this.mes = mes;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00049}00049         this.dia = dia;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00050}00050         this.hora = hora;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00052}00052     }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00054}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a9ec5287e92fda58ad3f64e11397a8f17}{00054}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a9ec5287e92fda58ad3f64e11397a8f17}{getIDReserva}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00055}00055         \textcolor{keywordflow}{return} IDReserva;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00058}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_ac65fe96afffe3836abb01bd048a3eb70}{00058}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_ac65fe96afffe3836abb01bd048a3eb70}{setIDReserva}}(String iDReserva) \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00059}00059         IDReserva = iDReserva;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00060}00060     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00062}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_ad83e4863ad53fbe6c20e362fc01395f1}{00062}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_ad83e4863ad53fbe6c20e362fc01395f1}{getIDInstalacion}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00063}00063         \textcolor{keywordflow}{return} IDInstalacion;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00066}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a0a7e961e8f2108a130f8578893067f5d}{00066}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a0a7e961e8f2108a130f8578893067f5d}{setIDInstalacion}}(String iDInstalacion) \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00067}00067         IDInstalacion = iDInstalacion;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00070}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a71e24c28b10ab772b60a04e15ef86d4d}{00070}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a71e24c28b10ab772b60a04e15ef86d4d}{getEmailUsuario}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00071}00071         \textcolor{keywordflow}{return} emailUsuario;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00074}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a1c98b96907bb206c39b9027e376c3add}{00074}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a1c98b96907bb206c39b9027e376c3add}{setEmailUsuario}}(String emailUsuario) \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00075}00075         this.emailUsuario = emailUsuario;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00078}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a3e99b3cfe2c7a35982d0fe63e2ffe5cb}{00078}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a3e99b3cfe2c7a35982d0fe63e2ffe5cb}{getAnyo}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00079}00079         \textcolor{keywordflow}{return} anyo;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00080}00080     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00082}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_aefc1d9aebed0d292058eebad686b3dcb}{00082}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_aefc1d9aebed0d292058eebad686b3dcb}{setAnyo}}(\textcolor{keywordtype}{int} anyo) \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00083}00083         this.anyo = anyo;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00084}00084     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00086}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_afa0560419bc069b8d3b85a338ee520d1}{00086}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_afa0560419bc069b8d3b85a338ee520d1}{getMes}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00087}00087         \textcolor{keywordflow}{return} mes;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00090}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_aaaa32bfb466b220b318718f3692c3820}{00090}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_aaaa32bfb466b220b318718f3692c3820}{setMes}}(\textcolor{keywordtype}{int} mes) \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00091}00091         this.mes = mes;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00092}00092     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00094}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_ac5c191e1d8baeb70447ef47609d28fe9}{00094}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_ac5c191e1d8baeb70447ef47609d28fe9}{getDia}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00095}00095         \textcolor{keywordflow}{return} dia;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00096}00096     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00098}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_acb9b21bfe3636afd10218443df5dcf67}{00098}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_acb9b21bfe3636afd10218443df5dcf67}{setDia}}(\textcolor{keywordtype}{int} dia) \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00099}00099         this.dia = dia;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00100}00100     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00102}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_ae7b034fbca5dd0344af9c26dcbdf939e}{00102}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_ae7b034fbca5dd0344af9c26dcbdf939e}{getHora}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00103}00103         \textcolor{keywordflow}{return} hora;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00106}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a5c104d0b876348e05503681f003ee19c}{00106}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a5c104d0b876348e05503681f003ee19c}{setHora}}(\textcolor{keywordtype}{int} hora) \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00107}00107         this.hora = hora;}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00108}00108     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00110}00110     }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00111}00111     @Override}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00112}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a5be00de97c42f66ba742e9ddffc599f4}{00112}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a5be00de97c42f66ba742e9ddffc599f4}{toString}}() \{}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00113}00113         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ReservaInstalaciones [IDReserva="{}} + IDReserva + \textcolor{stringliteral}{"{}, IDInstalacion="{}} + IDInstalacion + \textcolor{stringliteral}{"{}, emailUsuario="{}}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00114}00114                 + emailUsuario + \textcolor{stringliteral}{"{}, anyo="{}} + anyo + \textcolor{stringliteral}{"{}, mes="{}} + mes + \textcolor{stringliteral}{"{}, dia="{}} + dia + \textcolor{stringliteral}{"{}, hora="{}} + hora + \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00115}00115     \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00116}00116     }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00117}00117     }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00118}00118     }
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00119}00119 \}}
+\DoxyCodeLine{\Hypertarget{_reserva_instalaciones_8java_source_l00120}00120 }
+
+\end{DoxyCode}

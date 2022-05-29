@@ -1,0 +1,198 @@
+\hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{}\doxysection{es.\+deusto.\+spq.\+client.\+Service\+Locator Class Reference}
+\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a9be8db2dd923280d30d4be1d6ef593e0}{Service\+Locator}} ()
+\item 
+boolean \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a041c71605dcec333017d13103f33fec8}{agregar\+Cliente\+Polideportivo}} (String DNI, String nombre, String apellido, int edad, String email, String contrasenya, boolean Admin)
+\item 
+int \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a7ac5d7dd498f63094b9fc4ade6513f7f}{login\+Polideportivo}} (String email, String contrasenya)
+\item 
+boolean \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_aa19ebf41d86b8064b4636da3c57d23dd}{agregar\+Reserva\+Instalacion}} (String IDReserva, String IDInstalacion, String email\+Usuario, int anyo, int mes, int dia, int hora)
+\item 
+\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a71cad9413f1faf1b6d5fa04ed93c3e6b}{buscar\+Reserva\+Instalacion}} (String IDReserva)
+\item 
+List$<$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} $>$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a445947aa0b1ab341732b24b063677816}{obtener\+Instalaciones}} ()
+\item 
+Response \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a36a9388c2b01d683c7f40b67644da743}{borrar\+Reserva}} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} reserva)
+\item 
+List$<$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} $>$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a0d06d3a31726f5fc9d246b697e2646c2}{obtener\+Reservas}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a7cfc9d1377d5c3c3c34d0b733df9c9b2}{coger\+Url}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00019}{19}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a9be8db2dd923280d30d4be1d6ef593e0}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a9be8db2dd923280d30d4be1d6ef593e0}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!ServiceLocator@{ServiceLocator}}
+\index{ServiceLocator@{ServiceLocator}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{ServiceLocator()}{ServiceLocator()}}
+{\footnotesize\ttfamily es.\+deusto.\+spq.\+client.\+Service\+Locator.\+Service\+Locator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00025}{25}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a041c71605dcec333017d13103f33fec8}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a041c71605dcec333017d13103f33fec8}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!agregarClientePolideportivo@{agregarClientePolideportivo}}
+\index{agregarClientePolideportivo@{agregarClientePolideportivo}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{agregarClientePolideportivo()}{agregarClientePolideportivo()}}
+{\footnotesize\ttfamily boolean es.\+deusto.\+spq.\+client.\+Service\+Locator.\+agregar\+Cliente\+Polideportivo (\begin{DoxyParamCaption}\item[{String}]{DNI,  }\item[{String}]{nombre,  }\item[{String}]{apellido,  }\item[{int}]{edad,  }\item[{String}]{email,  }\item[{String}]{contrasenya,  }\item[{boolean}]{Admin }\end{DoxyParamCaption})}
+
+Método para agregar un cliente al polideportivo LLama al metodo al Remote\+Facade del servidor con la URL establecida 
+\begin{DoxyParams}{Parameters}
+{\em DNI} & del cliente que se registra \\
+\hline
+{\em nombre} & del cliente que se registra \\
+\hline
+{\em apellido} & del cliente que se registra \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devuelve true si todo ha salido correctamente 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00050}{50}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_aa19ebf41d86b8064b4636da3c57d23dd}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_aa19ebf41d86b8064b4636da3c57d23dd}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!agregarReservaInstalacion@{agregarReservaInstalacion}}
+\index{agregarReservaInstalacion@{agregarReservaInstalacion}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{agregarReservaInstalacion()}{agregarReservaInstalacion()}}
+{\footnotesize\ttfamily boolean es.\+deusto.\+spq.\+client.\+Service\+Locator.\+agregar\+Reserva\+Instalacion (\begin{DoxyParamCaption}\item[{String}]{IDReserva,  }\item[{String}]{IDInstalacion,  }\item[{String}]{email\+Usuario,  }\item[{int}]{anyo,  }\item[{int}]{mes,  }\item[{int}]{dia,  }\item[{int}]{hora }\end{DoxyParamCaption})}
+
+Método para que el cliente realice una reserva LLama al metodo al Remote\+Facade del servidor con la URL establecida 
+\begin{DoxyParams}{Parameters}
+{\em IDReserva} & identificativo de la reserva del cliente \\
+\hline
+{\em IDInstalacion} & identificativo de la instalacion que quiere reservar el cliente \\
+\hline
+{\em email\+Usuario} & del cliente que reserva \\
+\hline
+{\em anyo} & de la reserva \\
+\hline
+{\em mes} & de la reserva \\
+\hline
+{\em dia} & de la reserva \\
+\hline
+{\em hora} & de la reserva \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devuelve true si todo ha salido correctamente 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00107}{107}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a36a9388c2b01d683c7f40b67644da743}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a36a9388c2b01d683c7f40b67644da743}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!borrarReserva@{borrarReserva}}
+\index{borrarReserva@{borrarReserva}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{borrarReserva()}{borrarReserva()}}
+{\footnotesize\ttfamily Response es.\+deusto.\+spq.\+client.\+Service\+Locator.\+borrar\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}}}]{reserva }\end{DoxyParamCaption})}
+
+Método para borrar una reserva LLama al metodo al Remote\+Facade del servidor con la URL establecida 
+\begin{DoxyParams}{Parameters}
+{\em reserva} & que se quiere borrar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+response con borrado de la reserva 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00168}{168}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a71cad9413f1faf1b6d5fa04ed93c3e6b}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a71cad9413f1faf1b6d5fa04ed93c3e6b}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!buscarReservaInstalacion@{buscarReservaInstalacion}}
+\index{buscarReservaInstalacion@{buscarReservaInstalacion}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{buscarReservaInstalacion()}{buscarReservaInstalacion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} es.\+deusto.\+spq.\+client.\+Service\+Locator.\+buscar\+Reserva\+Instalacion (\begin{DoxyParamCaption}\item[{String}]{IDReserva }\end{DoxyParamCaption})}
+
+Método buscar una reserva en concreto LLama al metodo al Remote\+Facade del servidor con la URL establecida 
+\begin{DoxyParams}{Parameters}
+{\em IDReserva} & identificativo de la reserva del cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devuelve la reserva en concreto 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00134}{134}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a7cfc9d1377d5c3c3c34d0b733df9c9b2}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a7cfc9d1377d5c3c3c34d0b733df9c9b2}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!cogerUrl@{cogerUrl}}
+\index{cogerUrl@{cogerUrl}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{cogerUrl()}{cogerUrl()}}
+{\footnotesize\ttfamily static String es.\+deusto.\+spq.\+client.\+Service\+Locator.\+coger\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00030}{30}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a7ac5d7dd498f63094b9fc4ade6513f7f}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a7ac5d7dd498f63094b9fc4ade6513f7f}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!loginPolideportivo@{loginPolideportivo}}
+\index{loginPolideportivo@{loginPolideportivo}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{loginPolideportivo()}{loginPolideportivo()}}
+{\footnotesize\ttfamily int es.\+deusto.\+spq.\+client.\+Service\+Locator.\+login\+Polideportivo (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{contrasenya }\end{DoxyParamCaption})}
+
+Método logearse en el polideportivo LLama al metodo al Remote\+Facade del servidor con la URL establecida 
+\begin{DoxyParams}{Parameters}
+{\em email} & de la cuenta del cliente \\
+\hline
+{\em contrasenya} & de la cuenta del cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devuelve true si todo ha salido correctamente 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00077}{77}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a445947aa0b1ab341732b24b063677816}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a445947aa0b1ab341732b24b063677816}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!obtenerInstalaciones@{obtenerInstalaciones}}
+\index{obtenerInstalaciones@{obtenerInstalaciones}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{obtenerInstalaciones()}{obtenerInstalaciones()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} $>$ es.\+deusto.\+spq.\+client.\+Service\+Locator.\+obtener\+Instalaciones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Método obtener todas las instalaciones de la bd LLama al metodo al Remote\+Facade del servidor con la URL establecida \begin{DoxyReturn}{Returns}
+instalaciones de la bd 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00152}{152}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a0d06d3a31726f5fc9d246b697e2646c2}\label{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a0d06d3a31726f5fc9d246b697e2646c2}} 
+\index{es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}!obtenerReservas@{obtenerReservas}}
+\index{obtenerReservas@{obtenerReservas}!es.deusto.spq.client.ServiceLocator@{es.deusto.spq.client.ServiceLocator}}
+\doxysubsubsection{\texorpdfstring{obtenerReservas()}{obtenerReservas()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} $>$ es.\+deusto.\+spq.\+client.\+Service\+Locator.\+obtener\+Reservas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Método para obtener todas las reservas de la bd LLama al metodo al Remote\+Facade del servidor con la URL establecida \begin{DoxyReturn}{Returns}
+Devuelve todas las reservas de la bd 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00178}{178}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Archivos de Estudio/\+Git\+Hub/psc\+Polideportivo/src/main/java/es/deusto/spq/client/\mbox{\hyperlink{_service_locator_8java}{Service\+Locator.\+java}}\end{DoxyCompactItemize}

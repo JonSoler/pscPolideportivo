@@ -1,0 +1,116 @@
+\hypertarget{_ventana_cliente_8java_source}{}\doxysection{Ventana\+Cliente.\+java}
+\label{_ventana_cliente_8java_source}\index{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/client/gui/VentanaCliente.java@{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/client/gui/VentanaCliente.java}}
+\mbox{\hyperlink{_ventana_cliente_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.client.gui;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00003}00003 \textcolor{keyword}{import} java.awt.Color;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00004}00004 \textcolor{keyword}{import} java.awt.EventQueue;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00005}00005 \textcolor{keyword}{import} java.awt.Font;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00006}00006 \textcolor{keyword}{import} java.awt.SystemColor;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00007}00007 \textcolor{keyword}{import} java.awt.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00008}00008 \textcolor{keyword}{import} java.awt.event.ActionListener;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00010}00010 \textcolor{keyword}{import} javax.swing.JButton;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00011}00011 \textcolor{keyword}{import} javax.swing.JFrame;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00012}00012 \textcolor{keyword}{import} javax.swing.JLabel;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00013}00013 \textcolor{keyword}{import} javax.swing.JPanel;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00014}00014 \textcolor{keyword}{import} javax.swing.border.EmptyBorder;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00016}00016 \textcolor{keyword}{import} es.deusto.spq.client.Controller;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00018}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente}{00018}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente}{VentanaCliente}} \textcolor{keyword}{extends} JFrame\{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00019}00019     }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00023}00023     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{long} serialVersionUID = 1L;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00024}00024     \textcolor{keyword}{private} JPanel contentpane;}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00025}00025     \textcolor{keyword}{private} JButton botonReservarInstalaciones = \textcolor{keyword}{new} JButton();}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00026}00026     \textcolor{keyword}{private} JButton botonEliminarReservas = \textcolor{keyword}{new} JButton();}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00027}00027     \textcolor{keyword}{private} JButton botonSalir = \textcolor{keyword}{new} JButton();}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00028}00028     }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00029}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente_ac86897efecdc1c7dff4543bc93f14e5a}{00029}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente_ac86897efecdc1c7dff4543bc93f14e5a}{VentanaCliente}}(\textcolor{keyword}{final} es.deusto.spq.client.Controller controller)\{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00030}00030         contentpane = \textcolor{keyword}{new} JPanel();}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00032}00032         contentpane.setBorder(\textcolor{keyword}{new} EmptyBorder(10, 10, 5, 5));}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00033}00033         this.setContentPane(contentpane);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00034}00034         contentpane.setLayout(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00036}00036         JLabel lTitulo = \textcolor{keyword}{new} JLabel(\textcolor{stringliteral}{"{}PSC Polideportivo"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00037}00037         lTitulo.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Forte"{}}, Font.BOLD, 40));}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00038}00038         lTitulo.setBounds(365, 62, 341, 50);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00039}00039         contentpane.add(lTitulo);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00040}00040                 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00041}00041         botonReservarInstalaciones.setForeground(SystemColor.text);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00042}00042         botonReservarInstalaciones.setBackground(\textcolor{keyword}{new} Color(0, 51, 255));}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00043}00043         botonReservarInstalaciones.setBounds(410, 204, 238, 50);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00044}00044         botonReservarInstalaciones.setText(\textcolor{stringliteral}{"{}Reservar instalaciones"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00045}00045         botonReservarInstalaciones.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 23));}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00046}00046         contentpane.add(botonReservarInstalaciones);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00047}00047         }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00048}00048         botonEliminarReservas.setForeground(SystemColor.text);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00049}00049         botonEliminarReservas.setBackground(\textcolor{keyword}{new} Color(0, 51, 255));}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00050}00050         botonEliminarReservas.setBounds(410, 307, 238, 50);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00051}00051         botonEliminarReservas.setText(\textcolor{stringliteral}{"{}Eliminar reservas"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00052}00052         botonEliminarReservas.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 23));}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00053}00053         contentpane.add(botonEliminarReservas);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00054}00054                 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00055}00055         botonSalir.setForeground(SystemColor.black);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00056}00056         botonSalir.setBackground(SystemColor.inactiveCaptionBorder);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00057}00057         botonSalir.setBounds(22, 492, 90, 42);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00058}00058         botonSalir.setText(\textcolor{stringliteral}{"{}Salir"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00059}00059         botonSalir.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 20));}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00060}00060         contentpane.add(botonSalir);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00061}00061             }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00062}00062         botonEliminarReservas.addActionListener(\textcolor{keyword}{new} ActionListener() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00063}00063             }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00064}00064             @Override}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00065}00065             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00066}00066                 \textcolor{comment}{// TODO Auto-\/generated method stub}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00067}00067                 \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_eliminar_reserva}{VentanaEliminarReserva}}(controller);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00068}00068                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente}{VentanaCliente}}.this.dispose();    }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00069}00069             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00070}00070         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00071}00071         }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00072}00072         botonReservarInstalaciones.addActionListener(\textcolor{keyword}{new} ActionListener() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00073}00073             }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00074}00074             @Override}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00075}00075             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00076}00076                 \textcolor{comment}{// TODO Auto-\/generated method stub}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00077}00077                 \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones}{VentanaReservaInstalaciones}}(controller);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00078}00078                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente}{VentanaCliente}}.this.dispose();            }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00079}00079             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00080}00080         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00081}00081                         }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00082}00082         botonSalir.addActionListener(\textcolor{keyword}{new} ActionListener() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00083}00083             }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00084}00084             @Override}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00085}00085             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00086}00086                 \textcolor{comment}{// TODO Auto-\/generated method stub}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00087}00087                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_login}{VentanaLogin}} inicio = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_login}{VentanaLogin}}(controller);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00088}00088                 inicio.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00089}00089                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente}{VentanaCliente}}.this.dispose();}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00090}00090             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00091}00091         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00093}00093         this.setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00094}00094         this.setSize(1060, 600);}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00095}00095         this.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00096}00096         setLocationRelativeTo(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00097}00097         this.setTitle(\textcolor{stringliteral}{"{}PSC Polideportivo\(\backslash\)r\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00100}00100     }
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00101}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente_a885e1954dbe7d7d6fade48989d36b419}{00101}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente_a885e1954dbe7d7d6fade48989d36b419}{main}}(String[] args) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00102}00102         EventQueue.invokeLater(\textcolor{keyword}{new} Runnable() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00103}00103             \textcolor{keyword}{public} \textcolor{keywordtype}{void} run() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00104}00104                 \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00105}00105                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente}{VentanaCliente}} window = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente_ac86897efecdc1c7dff4543bc93f14e5a}{VentanaCliente}}(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00106}00106                     window.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00107}00107                 \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00108}00108                     e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00109}00109                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00110}00110             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00111}00111         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_cliente_8java_source_l00113}00113 \}}
+
+\end{DoxyCode}

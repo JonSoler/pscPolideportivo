@@ -1,0 +1,431 @@
+\hypertarget{_d_b_manager_8java_source}{}\doxysection{DBManager.\+java}
+\label{_d_b_manager_8java_source}\index{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/server/DBManager.java@{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/server/DBManager.java}}
+\mbox{\hyperlink{_d_b_manager_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00001}\mbox{\hyperlink{namespacees_1_1deusto_1_1spq_1_1server}{00001}} \textcolor{keyword}{package }es.deusto.spq.server;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00003}00003 \textcolor{keyword}{import} java.sql.Connection;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00004}00004 \textcolor{keyword}{import} java.sql.PreparedStatement;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00005}00005 \textcolor{keyword}{import} java.sql.SQLException;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00006}00006 \textcolor{keyword}{import} java.sql.Statement;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00007}00007 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00008}00008 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00009}00009 \textcolor{keyword}{import} java.util.logging.Level;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00011}00011 \textcolor{keyword}{import} javax.jdo.Extent;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00012}00012 \textcolor{keyword}{import} javax.jdo.JDOHelper;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00013}00013 \textcolor{keyword}{import} javax.jdo.PersistenceManager;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00014}00014 \textcolor{keyword}{import} javax.jdo.PersistenceManagerFactory;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00015}00015 \textcolor{keyword}{import} javax.jdo.Query;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00016}00016 \textcolor{keyword}{import} javax.jdo.Transaction;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00018}00018 \textcolor{keyword}{import} es.deusto.spq.client.Cliente;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00019}00019 \textcolor{keyword}{import} es.deusto.spq.client.Instalacion;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00020}00020 \textcolor{keyword}{import} es.deusto.spq.client.ReservaInstalaciones;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00022}00022 \textcolor{keyword}{import} es.deusto.spq.client.gui.VentanaLogin;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00025}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{00025}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00026}00026     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00027}00027     \textcolor{keyword}{private} \textcolor{keyword}{static} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}} instance = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00028}00028     \textcolor{keyword}{private} PersistenceManagerFactory pmf = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00029}00029     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keywordtype}{boolean} inicializado = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00030}00030     \textcolor{keyword}{private} \textcolor{keyword}{static} Connection conn;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00031}00031     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00032}00032     \textcolor{keyword}{private} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00033}00033         pmf = JDOHelper.getPersistenceManagerFactory(\textcolor{stringliteral}{"{}datanucleus.properties"{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00035}00035     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00041}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{00041}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00042}00042 \textcolor{comment}{//      if (instance == null) \{}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00043}00043         instance = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00044}00044 \textcolor{comment}{//          System.out.println("{}Nuevo DBManager"{});}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00045}00045 \textcolor{comment}{//      \}}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00046}00046         \textcolor{keywordflow}{if}(!inicializado) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00047}00047             inicializado = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00048}00048             instance.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ae7977dd7bb347bffa83ce32a7bc8ca14}{borrarDatos}}();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00049}00049             instance.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0e8da415356a249e814f1fbedfc632b9}{inicializarDatos}}();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00050}00050             }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00053}00053         \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00055}00055     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00056}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ae7977dd7bb347bffa83ce32a7bc8ca14}{00056}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ae7977dd7bb347bffa83ce32a7bc8ca14}{borrarDatos}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00057}00057         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a28107975eec21a331dd0206d0be6667a}{borrarClientes}}();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00058}00058         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a817ce1913dbf5903e1eb1168780447b8}{borrarInstalaciones}}();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00059}00059         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a3b28ac79fb9a56625b502a4364cdd5e2}{borrarReservasInstalaciones}}();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00060}00060         }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00061}00061         }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00063}00063     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00065}00065     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00066}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a5d3f2d4d67e739e4271c40a8f8673937}{00066}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a5d3f2d4d67e739e4271c40a8f8673937}{storeObjectInDB}}(Object \textcolor{keywordtype}{object}) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00067}00067         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00068}00068         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00069}00069         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00070}00070         }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00072}00072         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00073}00073             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00074}00074             pm.makePersistent(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00075}00075             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00076}00076         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00077}00077             System.out.println(\textcolor{stringliteral}{"{}  \$ Error storing an object: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00078}00078             System.out.println(\textcolor{stringliteral}{"{}Object:"{}} + \textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00079}00079         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00080}00080             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00081}00081                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00082}00082             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00084}00084             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00085}00085         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00087}00087         }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00088}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0e4007f59b075b233774357819d86447}{00088}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0e4007f59b075b233774357819d86447}{deleteObjectFromDB}}(Object \textcolor{keywordtype}{object}) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00089}00089         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00090}00090         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00091}00091         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00093}00093         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00094}00094             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00095}00095             }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00096}00096             pm.deletePersistent(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00097}00097             }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00098}00098             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00099}00099         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00100}00100             System.out.println(\textcolor{stringliteral}{"{} \$ Error deleting an object: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00101}00101         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00102}00102             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00103}00103                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00104}00104             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00106}00106             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00107}00107         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00108}00108         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00109}00109     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00110}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{00110}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} client) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00111}00111         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}().\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a5d3f2d4d67e739e4271c40a8f8673937}{storeObjectInDB}}(client);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00114}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_abdb15b1c4c430fc6986d8c95dfc653a8}{00114}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_abdb15b1c4c430fc6986d8c95dfc653a8}{delete}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} client) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00115}00115         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}().\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0e4007f59b075b233774357819d86447}{deleteObjectFromDB}}(client);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00116}00116     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00117}00117     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00118}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a66646e0d94876087c0dc0be4004e6615}{00118}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a66646e0d94876087c0dc0be4004e6615}{store}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00119}00119         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}().\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a5d3f2d4d67e739e4271c40a8f8673937}{storeObjectInDB}}(r);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00122}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a2d5cf6b2be649d2a0ce9218fac927f70}{00122}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a2d5cf6b2be649d2a0ce9218fac927f70}{delete}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00123}00123         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}().\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0e4007f59b075b233774357819d86447}{deleteObjectFromDB}}(r);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00124}00124     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00125}00125     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00126}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ac46898348cc6ea813caf83fa5a1a2e1a}{00126}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ac46898348cc6ea813caf83fa5a1a2e1a}{store}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} i) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00127}00127         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}().\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a5d3f2d4d67e739e4271c40a8f8673937}{storeObjectInDB}}(i);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00129}00129     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00130}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a4a0ce1aa95009ade4b6b034952d055a3}{00130}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a4a0ce1aa95009ade4b6b034952d055a3}{delete}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} i) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00131}00131         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}().\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0e4007f59b075b233774357819d86447}{deleteObjectFromDB}}(i);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00132}00132     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00133}00133     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00134}00134     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00135}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0754fa73d68ba5f3a3d047d9f87f380a}{00135}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0754fa73d68ba5f3a3d047d9f87f380a}{getUsuario}}(String email) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00136}00136         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00137}00137         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00138}00138         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00139}00139         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} user = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00141}00141         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00142}00142             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00144}00144             Query<?> query = pm.newQuery(\textcolor{stringliteral}{"{}SELECT FROM "{}} + \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}}.class.getName() + \textcolor{stringliteral}{"{} WHERE email == '"{}} + email + \textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00145}00145             query.setUnique(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00146}00146             user = (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}}) query.execute();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00148}00148             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00149}00149         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00150}00150             System.out.println(\textcolor{stringliteral}{"{} \$ Error cogiendo el usuario de la BD: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00151}00151         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00152}00152             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00153}00153                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00154}00154             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00156}00156             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00157}00157         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00159}00159         \textcolor{keywordflow}{return} user;    }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00160}00160         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00161}00161     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00162}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a28107975eec21a331dd0206d0be6667a}{00162}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a28107975eec21a331dd0206d0be6667a}{borrarClientes}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00163}00163         List<Cliente> usuarios = \textcolor{keyword}{new} ArrayList<Cliente>();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00164}00164         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00165}00165         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00166}00166         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00168}00168         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00170}00170             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00172}00172             Extent<Cliente> extent = pm.getExtent(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}}.class, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00174}00174             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} usuario : extent) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00175}00175                 pm.deletePersistent(usuario);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00176}00176             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00178}00178             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00179}00179         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00180}00180             System.out.println(\textcolor{stringliteral}{"{}  \$ Error retrieving all the Categories: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00181}00181         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00182}00182             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00183}00183                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00184}00184             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00186}00186             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00187}00187         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00189}00189     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00190}00190     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00191}00191     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00192}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a822678ef97147e6f19fac42a3825157e}{00192}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a822678ef97147e6f19fac42a3825157e}{agregarClientePolideportivo}}(List<Cliente> clientes) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00193}00193         PreparedStatement preparedStatement = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00195}00195             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00196}00196                 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00197}00197                 \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} c : clientes) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00198}00198                     String query = \textcolor{stringliteral}{"{} INSERT INTO CLIENTE (DNI, NOMBRE, APELLIDO, EDAD, EMAIL, CONTRASENYA, ADMIN)"{}}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00199}00199                             + \textcolor{stringliteral}{"{} VALUES (?, ?, ?, ?, ?, ?, ?)"{}};}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00201}00201                     preparedStatement = conn.prepareStatement(query);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00203}00203                     preparedStatement.setString(1, c.getDNI());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00204}00204                     preparedStatement.setString(2, c.getNombre());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00205}00205                     preparedStatement.setString(3, c.getApellido());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00206}00206                     preparedStatement.setInt(4, c.getEdad());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00207}00207                     preparedStatement.setString(5, c.getEmail());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00208}00208                     preparedStatement.setString(6, c.getContrasenya());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00209}00209                     preparedStatement.setBoolean(7, c.isAdmin());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00210}00210                     preparedStatement.execute();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00212}00212                     System.out.println(\textcolor{stringliteral}{"{}Clientes agregados correctamente"{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00213}00213                 \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00214}00214                 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00216}00216             \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00217}00217                 System.out.println(\textcolor{stringliteral}{"{}Error agregando los clientes"{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00218}00218                 System.out.println(e);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00219}00219             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00220}00220     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00221}00221     \textcolor{comment}{//Metodo para borrar las instalaciones al iniciar}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00222}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a817ce1913dbf5903e1eb1168780447b8}{00222}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a817ce1913dbf5903e1eb1168780447b8}{borrarInstalaciones}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00223}00223         List<Instalacion> Instalaciones = \textcolor{keyword}{new} ArrayList<Instalacion>();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00224}00224         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00225}00225         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00226}00226         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00228}00228         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00229}00229 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00230}00230             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00232}00232             Extent<Instalacion> extent = pm.getExtent(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}}.class, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00233}00233 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00234}00234             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} instalacion : extent) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00235}00235                 pm.deletePersistent(instalacion);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00236}00236             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00238}00238             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00239}00239         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00240}00240             System.out.println(\textcolor{stringliteral}{"{}  \$ Error retrieving all the Categories: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00241}00241         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00242}00242             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00243}00243                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00244}00244             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00245}00245 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00246}00246             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00247}00247         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00248}00248     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00249}00249     \textcolor{comment}{//Metodo para borrar las reservas al iniciar}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00250}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a3b28ac79fb9a56625b502a4364cdd5e2}{00250}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a3b28ac79fb9a56625b502a4364cdd5e2}{borrarReservasInstalaciones}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00251}00251         List<ReservaInstalaciones> reservaInstalaciones = \textcolor{keyword}{new} ArrayList<ReservaInstalaciones>();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00252}00252         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00253}00253         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00254}00254         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00256}00256         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00258}00258             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00259}00259 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00260}00260             Extent<ReservaInstalaciones> extent = pm.getExtent(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}.class, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00261}00261 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00262}00262             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reservaInstalacion : extent) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00263}00263                 pm.deletePersistent(reservaInstalacion);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00264}00264             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00265}00265 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00266}00266             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00267}00267         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00268}00268             System.out.println(\textcolor{stringliteral}{"{}  \$ Error retrieving all the Categories: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00269}00269         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00270}00270             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00271}00271                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00272}00272             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00273}00273 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00274}00274             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00275}00275         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00276}00276 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00277}00277     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00278}00278     \textcolor{comment}{//Metodo para sacar todas las instalaciones}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00279}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0d1854b4768087629182f34fb25f4fab}{00279}}     \textcolor{keyword}{public} List<Instalacion> \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0d1854b4768087629182f34fb25f4fab}{getInstalaciones}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00280}00280         List<Instalacion> instalaciones = \textcolor{keyword}{new} ArrayList<Instalacion>();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00281}00281         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00282}00282         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00283}00283         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00284}00284 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00285}00285         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00286}00286 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00287}00287             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00288}00288 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00289}00289             Extent<Instalacion> extent = pm.getExtent(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}}.class, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00290}00290 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00291}00291             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} instalacion : extent) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00292}00292                 instalaciones.add(instalacion);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00293}00293             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00295}00295             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00296}00296         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00297}00297             System.out.println(\textcolor{stringliteral}{"{}  \$ Error retrieving all the Categories: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00298}00298         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00299}00299             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00300}00300                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00301}00301             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00302}00302 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00303}00303             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00304}00304         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00305}00305 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00306}00306         \textcolor{keywordflow}{return} instalaciones;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00307}00307     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00308}00308      \textcolor{comment}{//Metodo para sacar todas las reservas}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00309}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a913a5ecea041c420ef8a3f2fd01018f2}{00309}}     \textcolor{keyword}{public} List<ReservaInstalaciones> \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a913a5ecea041c420ef8a3f2fd01018f2}{getReservasInstalaciones}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00310}00310         List<ReservaInstalaciones> reservasInstalaciones = \textcolor{keyword}{new} ArrayList<ReservaInstalaciones>();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00311}00311         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00312}00312         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00313}00313         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00314}00314 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00315}00315         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00316}00316 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00317}00317             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00319}00319             Extent<ReservaInstalaciones> extent = pm.getExtent(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}.class, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00320}00320 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00321}00321             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reservaInstalacion : extent) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00322}00322                 reservasInstalaciones.add(reservaInstalacion);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00323}00323             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00324}00324 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00325}00325             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00326}00326         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00327}00327             System.out.println(\textcolor{stringliteral}{"{}  \$ Error retrieving all the Categories: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00328}00328         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00329}00329             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00330}00330                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00331}00331             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00332}00332 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00333}00333             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00334}00334         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00335}00335 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00336}00336         \textcolor{keywordflow}{return} reservasInstalaciones;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00337}00337     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00338}00338     \textcolor{comment}{//borrar reserva en concreto}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00339}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aa993273640479a202e001791e1038f95}{00339}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aa993273640479a202e001791e1038f95}{borrarReservaInstalacion}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reserva) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00340}00340         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00341}00341         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00342}00342         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00343}00343             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00344}00344             Query<?> query = pm.newQuery(\textcolor{stringliteral}{"{}SELECT FROM "{}} + \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}.class.getName() + \textcolor{stringliteral}{"{} WHERE IDReserva == '"{}} + reserva.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones_a9ec5287e92fda58ad3f64e11397a8f17}{getIDReserva}}() + \textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00345}00345             System.out.println(\textcolor{stringliteral}{"{} * '"{}} + query.deletePersistentAll() + \textcolor{stringliteral}{"{}' reserva borrada de la DB."{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00346}00346             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00347}00347         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00348}00348             System.out.println(\textcolor{stringliteral}{"{} \$ Error querying a Reserva: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00349}00349             ex.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00350}00350         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00351}00351             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00352}00352                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00353}00353             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00354}00354             \textcolor{keywordflow}{if} (pm != \textcolor{keyword}{null} \&\& !pm.isClosed()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00355}00355                 pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00356}00356             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00357}00357         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00358}00358     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00359}00359     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00360}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ab559f975bf0c74414ab16deaef4e5d8b}{00360}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}  \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_ab559f975bf0c74414ab16deaef4e5d8b}{getReservaInstalaciones}}(String IDInstalacion) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00361}00361         PersistenceManager pm = pmf.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00362}00362         pm.getFetchPlan().setMaxFetchDepth(4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00363}00363         Transaction tx = pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00364}00364         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reservas = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00365}00365 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00366}00366         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00367}00367             tx.begin();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00368}00368 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00369}00369             Query<?> query = pm.newQuery(\textcolor{stringliteral}{"{}SELECT FROM "{}} + \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}.class.getName() + \textcolor{stringliteral}{"{} WHERE IDReserva == '"{}} + IDInstalacion + \textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00370}00370             query.setUnique(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00371}00371             reservas = (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}) query.execute();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00372}00372 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00373}00373             tx.commit();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00374}00374         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00375}00375             System.out.println(\textcolor{stringliteral}{"{} \$ Error cogiendo el reserva de la BD: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00376}00376         \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00377}00377             \textcolor{keywordflow}{if} (tx != \textcolor{keyword}{null} \&\& tx.isActive()) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00378}00378                 tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00379}00379             \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00380}00380 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00381}00381             pm.close();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00382}00382         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00383}00383 }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00384}00384         \textcolor{keywordflow}{return} reservas;}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00385}00385     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00386}00386     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00387}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0e8da415356a249e814f1fbedfc632b9}{00387}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a0e8da415356a249e814f1fbedfc632b9}{inicializarDatos}}() \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00388}00388         System.out.println(\textcolor{stringliteral}{"{} * Inicializando base de datos"{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00389}00389         }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00390}00390         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} c1 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}}(\textcolor{stringliteral}{"{}43527594"{}}, \textcolor{stringliteral}{"{}Manolito"{}}, \textcolor{stringliteral}{"{}Manolito"{}}, 18, \textcolor{stringliteral}{"{}manolito@gmail.com"{}}, \textcolor{stringliteral}{"{}manolito123"{}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00391}00391         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} c2 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}}(\textcolor{stringliteral}{"{}admin"{}}, \textcolor{stringliteral}{"{}admin"{}}, \textcolor{stringliteral}{"{}admin"{}}, 20, \textcolor{stringliteral}{"{}admin@admin.com"{}}, \textcolor{stringliteral}{"{}admin"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00392}00392         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} c3 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}}(\textcolor{stringliteral}{"{}43124342"{}}, \textcolor{stringliteral}{"{}Copito"{}}, \textcolor{stringliteral}{"{}Copito"{}}, 24, \textcolor{stringliteral}{"{}copito@gmail.com"{}}, \textcolor{stringliteral}{"{}copito123"{}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00393}00393         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} c4 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}}(\textcolor{stringliteral}{"{}36485496"{}}, \textcolor{stringliteral}{"{}Juanito"{}}, \textcolor{stringliteral}{"{}Juanito"{}}, 24, \textcolor{stringliteral}{"{}juanito@gmail.com"{}}, \textcolor{stringliteral}{"{}juanito123"{}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00394}00394         }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00395}00395         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} i1 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}}(\textcolor{stringliteral}{"{}001"{}}, \textcolor{stringliteral}{"{}Piscina"{}}, 20, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00396}00396         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} i2 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}}(\textcolor{stringliteral}{"{}002"{}}, \textcolor{stringliteral}{"{}CampoFutbol"{}}, 100, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00397}00397         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} i3 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}}(\textcolor{stringliteral}{"{}003"{}}, \textcolor{stringliteral}{"{}CanchaBalocento"{}}, 80, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00398}00398         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} i4 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}}(\textcolor{stringliteral}{"{}004"{}}, \textcolor{stringliteral}{"{}PistaTenis"{}}, 90, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00399}00399         }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00400}00400         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r1 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}(\textcolor{stringliteral}{"{}R01"{}}, \textcolor{stringliteral}{"{}001"{}}, \textcolor{stringliteral}{"{}manolito@gmail.com"{}}, 2023, 5, 6, 11);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00401}00401         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r2 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}(\textcolor{stringliteral}{"{}R02"{}}, \textcolor{stringliteral}{"{}002"{}}, \textcolor{stringliteral}{"{}manolito@gmail.com"{}}, 2022, 3, 7, 14);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00402}00402         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r3 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}(\textcolor{stringliteral}{"{}R03"{}}, \textcolor{stringliteral}{"{}001"{}}, \textcolor{stringliteral}{"{}copito@gmail.com"{}}, 2022, 7, 9, 17);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00403}00403         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r4 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}(\textcolor{stringliteral}{"{}R04"{}}, \textcolor{stringliteral}{"{}004"{}}, \textcolor{stringliteral}{"{}copito@gmail.com"{}}, 2023, 5, 6, 17);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00404}00404         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r5 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}(\textcolor{stringliteral}{"{}R05"{}}, \textcolor{stringliteral}{"{}003"{}}, \textcolor{stringliteral}{"{}juanito@gmail.com"{}}, 2022, 6, 4, 15);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00405}00405         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r6 = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}}(\textcolor{stringliteral}{"{}R06"{}}, \textcolor{stringliteral}{"{}001"{}}, \textcolor{stringliteral}{"{}juanito@gmail.com"{}}, 2022, 6, 5, 19);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00406}00406         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00407}00407              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(c1);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00408}00408              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(c2);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00409}00409              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(c3);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00410}00410              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(c4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00411}00411              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(i1);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00412}00412              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(i2);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00413}00413              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(i3);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00414}00414              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(i4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00415}00415              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(r1);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00416}00416              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(r2);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00417}00417              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(r3);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00418}00418              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(r4);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00419}00419              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(r5);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00420}00420              \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_a43bc8957e8987a962fe47050a28ca9b2}{store}}(r6);}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00421}00421              }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00422}00422         \} \textcolor{keywordflow}{catch} (Exception ex) \{}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00423}00423             \textcolor{comment}{// TODO: handle exception}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00424}00424             System.out.println(\textcolor{stringliteral}{"{} \$ Error inicializando los datos: "{}} + ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00425}00425             ex.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00426}00426         \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00427}00427     \}}
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00428}00428     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00429}00429     }
+\DoxyCodeLine{\Hypertarget{_d_b_manager_8java_source_l00430}00430 \}}
+
+\end{DoxyCode}

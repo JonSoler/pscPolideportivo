@@ -1,0 +1,125 @@
+\hypertarget{_cliente_8java_source}{}\doxysection{Cliente.\+java}
+\label{_cliente_8java_source}\index{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/client/Cliente.java@{D:/Archivos de Estudio/GitHub/pscPolideportivo/src/main/java/es/deusto/spq/client/Cliente.java}}
+\mbox{\hyperlink{_cliente_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00001}\mbox{\hyperlink{namespacees_1_1deusto_1_1spq_1_1client}{00001}} \textcolor{keyword}{package }es.deusto.spq.client;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00003}00003 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00005}00005 \textcolor{keyword}{import} javax.jdo.annotations.Inheritance;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00006}00006 \textcolor{keyword}{import} javax.jdo.annotations.InheritanceStrategy;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00007}00007 \textcolor{keyword}{import} javax.jdo.annotations.PersistenceCapable;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00008}00008 \textcolor{keyword}{import} javax.jdo.annotations.PrimaryKey;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00010}00010 \textcolor{keyword}{import} org.glassfish.grizzly.http.server.AddOn;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00012}00012 @PersistenceCapable}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00013}00013 @Inheritance(strategy=InheritanceStrategy.NEW\_TABLE)}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00014}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{00014}} public class \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00015}00015     @PrimaryKey}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00016}00016     \textcolor{keyword}{private} String DNI;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00017}00017     \textcolor{keyword}{private} String nombre;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00018}00018     \textcolor{keyword}{private} String apellido;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00019}00019     \textcolor{keyword}{private} \textcolor{keywordtype}{int} edad;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00020}00020     \textcolor{keyword}{private} String email;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00021}00021     \textcolor{keyword}{private} String contrasenya;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00022}00022     \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} Admin;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00023}00023     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00024}00024     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00035}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a53581f4e4ac1944da36287f7c8b6031a}{00035}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a53581f4e4ac1944da36287f7c8b6031a}{Cliente}}(String dNI, String nombre, String apellido, \textcolor{keywordtype}{int} edad, String email, String contrasenya,}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00036}00036             \textcolor{keywordtype}{boolean} admin) \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00037}00037         super();}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00038}00038         DNI = dNI;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00039}00039         this.nombre = nombre;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00040}00040         this.apellido = apellido;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00041}00041         this.edad = edad;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00042}00042         this.email = email;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00043}00043         this.contrasenya = contrasenya;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00044}00044         Admin = admin;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00046}00046     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00047}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a8c107df51fe9419eb3904f7b4c687764}{00047}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a8c107df51fe9419eb3904f7b4c687764}{Cliente}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00048}00048         super();}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00049}00049         DNI = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00050}00050         this.nombre = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00051}00051         this.apellido = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00052}00052         this.edad = 0;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00053}00053         this.email = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00054}00054         this.contrasenya = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00055}00055         Admin = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00058}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a59c263c80cb8319a38171fbd236c06a3}{00058}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a59c263c80cb8319a38171fbd236c06a3}{getDNI}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00059}00059         \textcolor{keywordflow}{return} DNI;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00060}00060     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00062}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_ac66a48e642fe95de8ff172c45c38b7bd}{00062}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_ac66a48e642fe95de8ff172c45c38b7bd}{setDNI}}(String dNI) \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00063}00063         DNI = dNI;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00066}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a2da4a8e84e1c1d684f916b1e508104df}{00066}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a2da4a8e84e1c1d684f916b1e508104df}{getNombre}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00067}00067         \textcolor{keywordflow}{return} nombre;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00070}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_aaa33f4c93ec3f31635d05c92b8c37980}{00070}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_aaa33f4c93ec3f31635d05c92b8c37980}{setNombre}}(String nombre) \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00071}00071         this.nombre = nombre;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00074}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a8904361d46d5f789027e2ac5ff701575}{00074}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a8904361d46d5f789027e2ac5ff701575}{getApellido}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00075}00075         \textcolor{keywordflow}{return} apellido;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00078}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a9604180ce55d02af4f4be8450ea31aff}{00078}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a9604180ce55d02af4f4be8450ea31aff}{setApellido}}(String apellido) \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00079}00079         this.apellido = apellido;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00080}00080     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00082}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_aced98b275fd2638ae9f18a1c25cf03fa}{00082}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_aced98b275fd2638ae9f18a1c25cf03fa}{getEdad}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00083}00083         \textcolor{keywordflow}{return} edad;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00084}00084     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00086}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_abf9f7caf30748d8565d9cd7718d10bd9}{00086}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_abf9f7caf30748d8565d9cd7718d10bd9}{setEdad}}(\textcolor{keywordtype}{int} edad) \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00087}00087         this.edad = edad;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00090}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_ad45436d24368e77a37836527fa6af57a}{00090}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_ad45436d24368e77a37836527fa6af57a}{getEmail}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00091}00091         \textcolor{keywordflow}{return} email;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00092}00092     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00094}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a4b1fab7b7cca96749e3a41684a236688}{00094}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a4b1fab7b7cca96749e3a41684a236688}{setEmail}}(String email) \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00095}00095         this.email = email;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00096}00096     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00098}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a9ccbc450614369fd38ee6783d5c9b030}{00098}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a9ccbc450614369fd38ee6783d5c9b030}{getContrasenya}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00099}00099         \textcolor{keywordflow}{return} contrasenya;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00100}00100     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00102}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_ab28c5808c3b4b168db3e29b7bdcaa2af}{00102}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_ab28c5808c3b4b168db3e29b7bdcaa2af}{setContrasenya}}(String contrasenya) \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00103}00103         this.contrasenya = contrasenya;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00106}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a9feb2a767e3f209dcb24fb9bbf35d005}{00106}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_a9feb2a767e3f209dcb24fb9bbf35d005}{isAdmin}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00107}00107         \textcolor{keywordflow}{return} Admin;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00108}00108     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00110}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_adfd2f4c6f5c66b2333d4613a5b9465bc}{00110}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_adfd2f4c6f5c66b2333d4613a5b9465bc}{setAdmin}}(\textcolor{keywordtype}{boolean} admin) \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00111}00111         Admin = admin;}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00114}00114     @Override}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00115}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_ab62bb0c6cb3da3bdff735a3718713b4c}{00115}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente_ab62bb0c6cb3da3bdff735a3718713b4c}{toString}}() \{}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00116}00116         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Cliente [DNI="{}} + DNI + \textcolor{stringliteral}{"{}, nombre="{}} + nombre + \textcolor{stringliteral}{"{}, apellido="{}} + apellido + \textcolor{stringliteral}{"{}, edad="{}} + edad + \textcolor{stringliteral}{"{}, email="{}}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00117}00117                 + email + \textcolor{stringliteral}{"{}, contrasenya="{}} + contrasenya + \textcolor{stringliteral}{"{}, Admin="{}} + Admin + \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00119}00119     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00120}00120     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00121}00121     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00122}00122     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00123}00123     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00125}00125     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00126}00126     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00127}00127     }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_cliente_8java_source_l00129}00129 \}}
+
+\end{DoxyCode}
