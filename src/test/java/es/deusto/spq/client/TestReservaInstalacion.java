@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import es.deusto.spq.client.ReservaInstalaciones;
 
-public class testReservaInstalacion {
+public class TestReservaInstalacion {
 	ReservaInstalaciones a = new ReservaInstalaciones("3b", "2A", "PedroGarcia@gmail.com", 2022, 3, 2, 10);
 	ReservaInstalaciones b= new ReservaInstalaciones();
 	@Test

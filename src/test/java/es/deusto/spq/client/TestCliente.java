@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import es.deusto.spq.client.Cliente;
 
-public class testCliente {
+public class TestCliente {
 	Cliente a = new Cliente("1111A", "Pedro", "Garcia", 20, "PedroGarcia@gmail.com", "123Garcia",false);
 	Cliente b= new Cliente();
 	@Test
