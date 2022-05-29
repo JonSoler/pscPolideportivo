@@ -401,6 +401,7 @@ public class DBManager {
 		try {
 			 store(c1);
 			 store(c2);
+			 store(c3);
 			 store(i1);
 			 store(i2);
 			 store(r1);
