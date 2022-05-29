@@ -1,0 +1,50 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 1.11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+          
+      - name: clean compile
+        run: mvn --batch-mode --update-snapshots clean compile 
+        
+      - name: Set up MySQL
+        run: | 
+          sudo /etc/init.d/mysql start
+          mysql -uroot -proot < src/main/sql/create-pscPolideportivo.sql
+          mvn --batch-mode --update-snapshots compile 
+          mvn --batch-mode --update-snapshots datanucleus:enhance
+          mvn --batch-mode --update-snapshots datanucleus:schema-create
+          mvn --batch-mode --update-snapshots exec:java -PServer
+          
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+                  
+      - name: Build with Maven including only unit testing (with SonarCloud)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn --batch-mode --update-snapshots test org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+          
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots test
+        
+      - name: Retrieve version
+        run: echo "::set-output name=TAG_NAME::$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)"
+        id: version
+
+      - uses: dev-drprasad/delete-tag-and-release@v0.1.3
+        with:
+          delete_release: true
+          tag_name: ${{ steps.version.outputs.TAG_NAME }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
