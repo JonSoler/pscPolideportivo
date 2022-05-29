@@ -43,9 +43,13 @@ Para ejecutar el cliente (en la otra instancia del cmd):
 
 A continuación se detallan las herramientas utilizadas para crear el proyecto:
 
-* [Eclipse]      (https://www.eclipse.org/) - Entorno de desarrollo de software 
-* [Apache Maven] (https://maven.apache.org/) - Manejador de dependencias
-* [Log4j]        (http://logging.apache.org/log4j/1.2/) - Logger
+* [Eclipse]         (https://www.eclipse.org/) - Entorno de desarrollo de software 
+* [Apache Maven]    (https://maven.apache.org/) - Manejador de dependencias
+* [Log4j]           (http://logging.apache.org/log4j/1.2/) - Logger
+* [JaCoCo]          (https://www.eclemma.org/jacoco/) - Analisis de teses y cobertura
+* [Doxygen]         (https://www.doxygen.nl/) - Generar documentación
+* [GitHub Actions]  (https://github.com/features/actions) - Integración continua
+* [Sonarcloud]      (http://logging.apache.org/log4j/1.2/) - Bugs y vulnerabilidades
 
 
 ## ✒️ Autores
@@ -60,4 +64,4 @@ https://github.com/JonSoler/pscPolideportivo/graphs/contributors
 
 ## ℹ️ Versión
 
-PSC Polideportivo© ver. 3.0 - 2022-05-27
+PSC Polideportivo© ver. 4.0 - 2022-05-29
