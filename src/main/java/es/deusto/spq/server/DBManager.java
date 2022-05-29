@@ -387,16 +387,26 @@ public class DBManager {
 	public void inicializarDatos() {
 		System.out.println(" * Inicializando base de datos");
 		
-		Cliente c1 = new Cliente("43527594", "Manolito", "Manolo", 18, "Manolito@gmail.es", "manolo123", false);
+		Cliente c1 = new Cliente("43527594", "Manolito", "Manolito", 18, "manolito@gmail.com", "manolito123", false);
 		Cliente c2 = new Cliente("admin", "admin", "admin", 20, "admin@admin.es", "admin", true);
+		Cliente c3 = new Cliente("43124342", "Copito", "Copito", 24, "copito@gmail.com", "copito123", false);
 		
-		Instalacion i1 = new Instalacion("1231", "Piscina", 50, false);
-		Instalacion i2 = new Instalacion("5443", "Campo", 60, false);
+		Instalacion i1 = new Instalacion("001", "Piscina", 50, false);
+		Instalacion i2 = new Instalacion("002", "Campo", 60, false);
+		
+		ReservaInstalaciones r1 = new ReservaInstalaciones("R01", "001", "manolito@gmail.com", 2023, 5, 6, 11);
+		ReservaInstalaciones r2 = new ReservaInstalaciones("R02", "002", "manolito@gmail.com", 2022, 3, 7, 14);
+		ReservaInstalaciones r3 = new ReservaInstalaciones("R03", "001", "copito@gmail.com", 2022, 7, 9, 17);
+		ReservaInstalaciones r4 = new ReservaInstalaciones("R04", "002", "copito@gmail.com", 2023, 5, 6, 17);
 		try {
 			 store(c1);
 			 store(c2);
 			 store(i1);
 			 store(i2);
+			 store(r1);
+			 store(r2);
+			 store(r3);
+			 
 		} catch (Exception ex) {
 			// TODO: handle exception
 			System.out.println(" $ Error inicializando los datos: " + ex.getMessage());

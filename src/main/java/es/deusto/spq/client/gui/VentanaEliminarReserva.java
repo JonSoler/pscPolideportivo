@@ -6,24 +6,37 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.lang.ModuleLayer.Controller;
+import java.util.ArrayList;
+import java.util.Properties;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.ws.rs.core.Response;
+
+import es.deusto.spq.client.Instalacion;
+import es.deusto.spq.client.ReservaInstalaciones;
+import es.deusto.spq.client.ServiceLocator;
 
 public class VentanaEliminarReserva extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentpane;
 	
-	private JList listaInstalaciones = new JList();
+	private JList listaReservas = new JList();
 	private JButton botonReservar = new JButton();
 	private JButton botonAtras = new JButton();
+	private DefaultListModel contenidoReservas = new DefaultListModel();
+	String emailUsuario = "";
 	
 
 	public VentanaEliminarReserva(final es.deusto.spq.client.Controller controller) {
@@ -33,8 +46,8 @@ public class VentanaEliminarReserva extends JFrame {
 		this.setContentPane(contentpane);
 		contentpane.setLayout(null);
 		
-		listaInstalaciones.setBounds(303, 103, 447, 386);
-		contentpane.add(listaInstalaciones);
+		listaReservas.setBounds(303, 103, 447, 386);
+		contentpane.add(listaReservas);
 
 		JLabel lTitulo = new JLabel("Eliminar reservas");
 		lTitulo.setFont(new Font("Forte", Font.BOLD, 40));
@@ -54,12 +67,56 @@ public class VentanaEliminarReserva extends JFrame {
 		botonAtras.setText("Atrás");
 		botonAtras.setFont(new Font("Goudy Old Style", Font.BOLD, 19));
 		contentpane.add(botonAtras);
-
+		
+		Properties objetoP = new Properties();
+		try {
+			objetoP.load(new FileInputStream("prop.properties"));
+		} catch (IOException e2) {
+			e2.printStackTrace();
+		}
+		if (objetoP.getProperty("email") != null) {
+			emailUsuario = objetoP.getProperty("email");
+		}
+		
+		contenidoReservas = new DefaultListModel();
+		ServiceLocator serviceLocator = new ServiceLocator();
+		ArrayList<ReservaInstalaciones> reservas = (ArrayList<ReservaInstalaciones>) controller.obtenerReservas();
+		
+		for (ReservaInstalaciones reservaInstalaciones : reservas) {
+			
+			
+			if (reservaInstalaciones.getEmailUsuario().equals(emailUsuario)) {
+				contenidoReservas.addElement(reservaInstalaciones);
+			}
+			
+		}
+		
+		listaReservas.setModel(contenidoReservas);
+		listaReservas.setBounds(81, 95, 447, 386);
+		contentpane.add(listaReservas);
+		
 		
 		botonReservar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				String IDReserva = "";
 				
+				for (int i = 32; i < 35; i++) {
+				IDReserva = IDReserva + listaReservas.getSelectedValue().toString().charAt(i);
+				String IDReserva2 = "R01";
+				}
+				
+				for (ReservaInstalaciones reservaInstalaciones : reservas) {
+					
+					
+					if (reservaInstalaciones.getIDReserva().equals(IDReserva)) {
+						Response ban = controller.borrarReserva(reservaInstalaciones);
+						JOptionPane.showMessageDialog(null, "Reserva eliminada correctamente.");
+					} 
+					
+					
+					
+				}
 			}
 		});
 				

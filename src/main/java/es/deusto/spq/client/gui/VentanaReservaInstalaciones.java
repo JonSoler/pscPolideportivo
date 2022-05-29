@@ -166,7 +166,7 @@ public class VentanaReservaInstalaciones extends JFrame {
 				}
 
 				
-				for (int i = 11; i < 14; i++) {
+				for (int i = 16; i < 19; i++) {
 					IDInstalacion = IDInstalacion + listaInstalaciones.getSelectedValue().toString().charAt(i);
 				}
 				
@@ -195,12 +195,12 @@ public class VentanaReservaInstalaciones extends JFrame {
 				
 				boolean condicion = false;
 				if (listaInstalaciones.isSelectionEmpty() != true && dia != 0 && mes != 0 && anyo != 0) {
-					condicion = existeReserva(reservas, IDInstalacion, dia, mes, anyo, hora);
+					condicion = existeReserva(reservas, IDInstalacion, anyo, mes, dia, hora);
 				} else {
 					JOptionPane.showMessageDialog(null, "No se ha podido registrar la reserva.");
 				}
 				if (condicion == true) {
-					condicion = controller.agregarReservaInstalacion(IDReserva, IDInstalacion, emailUsuario, dia, mes, anyo, hora);
+					condicion = controller.agregarReservaInstalacion(IDReserva, IDInstalacion, emailUsuario, anyo, mes, dia, hora);
 					JOptionPane.showMessageDialog(null, "Reserva registrada correctamente.");
 				}
 				
@@ -225,7 +225,7 @@ public class VentanaReservaInstalaciones extends JFrame {
 		this.setTitle("Reservas");
 	}
 	
-	public static boolean existeReserva(ArrayList<ReservaInstalaciones> reservas, String IDInstalacion, int dia, int mes, int anyo, int hora) {
+	public static boolean existeReserva(ArrayList<ReservaInstalaciones> reservas, String IDInstalacion, int anyo, int mes, int dia, int hora) {
 		for (ReservaInstalaciones reserva : reservas) {
 			if (IDInstalacion.equals(reserva.getIDInstalacion()) && dia == reserva.getDia() && mes == reserva.getMes() && anyo == reserva.getAnyo()&& hora == reserva.getHora()) {
 				JOptionPane.showMessageDialog(null, "Instalacion ocupada.");
