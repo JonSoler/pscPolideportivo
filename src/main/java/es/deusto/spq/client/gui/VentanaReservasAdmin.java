@@ -60,7 +60,7 @@ public class VentanaReservasAdmin extends JFrame {
 
 		}
 		listaReservas.setModel(contenidoReservas);
-		listaReservas.setBounds(303, 103, 447, 386);
+		listaReservas.setBounds(153, 101, 753, 386);
 		contentpane.add(listaReservas);
 				
 		botonAtras.addActionListener(new ActionListener() {
