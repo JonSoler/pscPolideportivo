@@ -301,8 +301,8 @@
 		<server.hostname>127.0.0.1</server.hostname>
 		<server.port>8080</server.port>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
-		<sonar.projectKey>kevin31000_pscHotel</sonar.projectKey>
-		<sonar.organization>kevin31000</sonar.organization>
+		<sonar.projectKey>JonSoler_pscPolideportivo</sonar.projectKey>
+		<sonar.organization>jonsoler</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<doxygen.config.file>${basedir}/src/main/resources/Doxyfile</doxygen.config.file>
 	</properties>
