@@ -390,9 +390,13 @@ public class DBManager {
 		Cliente c1 = new Cliente("43527594", "Manolito", "Manolo", 18, "Manolito@gmail.es", "manolo123", false);
 		Cliente c2 = new Cliente("admin", "admin", "admin", 20, "admin@admin.es", "admin", true);
 		
+		Instalacion i1 = new Instalacion("1231", "Piscina", 50, false);
+		Instalacion i2 = new Instalacion("5443", "Campo", 60, false);
 		try {
 			 store(c1);
 			 store(c2);
+			 store(i1);
+			 store(i2);
 		} catch (Exception ex) {
 			// TODO: handle exception
 			System.out.println(" $ Error inicializando los datos: " + ex.getMessage());

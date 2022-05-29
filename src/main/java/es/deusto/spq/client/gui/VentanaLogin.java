@@ -23,6 +23,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Client;
+import es.deusto.spq.server.GetProperties;
 
 public class VentanaLogin extends JFrame {
 
@@ -42,9 +45,20 @@ public class VentanaLogin extends JFrame {
 	private JPasswordField textoContrasenya = new JPasswordField();
 	private JButton botonIniciarSesion = new JButton();
 	private JButton botonRegistrarse = new JButton();
+	private Client client;
 
 	public VentanaLogin(final es.deusto.spq.client.Controller controller) {
-
+		
+		client = ClientBuilder.newClient();
+		emailUsuario();
+		GetProperties properties = new GetProperties();
+		String url = "";
+		try {
+			url = properties.getURL();
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		contentpane = new JPanel();
 		contentpane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentpane);
@@ -95,7 +109,7 @@ public class VentanaLogin extends JFrame {
 					try {
 						String usuario = textoUsuario.getText();
 						emailDelUsuario = usuario;
-						//usuarioLogin();
+						usuarioLogin();
 						menu = new VentanaCliente(controller);
 						menu.setVisible(true);
 						VentanaLogin.this.dispose();
@@ -112,7 +126,7 @@ public class VentanaLogin extends JFrame {
 					try {
 						String usuario = textoUsuario.getText();
 						emailDelUsuario = usuario;
-						//usuarioLogin();
+						usuarioLogin();
 						admin = new VentanaAdmin(controller);
 						admin.setVisible(true);
 						VentanaLogin.this.dispose();
@@ -144,7 +158,7 @@ public class VentanaLogin extends JFrame {
 
 	}
 
-	/*public static String emailUsuario() {
+	public static String emailUsuario() {
 		p = new Properties();
 		try {
 			File f = new File("prop.properties");
@@ -161,8 +175,8 @@ public class VentanaLogin extends JFrame {
 		}
 		return emailDelAnteriorUsuario;
 	}
-	*/
-	/*private void usuarioLogin() {
+	
+	private void usuarioLogin() {
 		p.put("email", emailDelUsuario);
 		try {
 			p.store(new FileWriter("prop.properties"), "" + new Date());
@@ -171,7 +185,7 @@ public class VentanaLogin extends JFrame {
 		}
 		emailDelAnteriorUsuario = emailDelUsuario;
 	}
-	*/
+	
 	public VentanaLogin(boolean b) {
 		this(null);
 	}
