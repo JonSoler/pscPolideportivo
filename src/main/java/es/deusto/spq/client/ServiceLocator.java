@@ -40,7 +40,13 @@ public class ServiceLocator {
 		return url;
 
 	}
-	
+	/**Método para agregar un cliente al polideportivo
+	 * LLama al metodo al RemoteFacade del servidor con la URL establecida
+	 * @param DNI  del cliente que se registra 
+	 * @param nombre del cliente que se registra
+	 * @param apellido del cliente que se registra
+	 * @return Devuelve true si todo ha salido correctamente
+	 */
 	public boolean agregarClientePolideportivo(String DNI, String nombre, String apellido, int edad, String email, String contrasenya, boolean Admin) {
 		WebTarget registerUserWebTarget = webTarget.path("server/registroPolideportivo");
 		Cliente c = new Cliente();
@@ -62,7 +68,12 @@ public class ServiceLocator {
 			return true;
 		}
 	}
-	
+	/**Método logearse en el polideportivo
+	 * LLama al metodo al RemoteFacade del servidor con la URL establecida
+	 * @param email  de la cuenta del cliente 
+	 * @param contrasenya de la cuenta del cliente
+	 * @return Devuelve true si todo ha salido correctamente
+	 */
 	public int loginPolideportivo(String email, String contrasenya) {
 		WebTarget webTarget1 = webTarget.path("server/loginPolideportivo");
 		Invocation.Builder invocationBuilder = webTarget1.request(MediaType.APPLICATION_JSON);
@@ -80,6 +91,18 @@ public class ServiceLocator {
 		}
 		return 0;
 	}
+	
+	/**Método para que el cliente realice una reserva
+	 * LLama al metodo al RemoteFacade del servidor con la URL establecida
+	 * @param IDReserva  identificativo de la reserva del cliente 
+	 * @param IDInstalacion identificativo de la instalacion que quiere reservar el cliente
+	 * @param emailUsuario del cliente que reserva
+	 * @param anyo de la reserva
+	 * @param mes de la reserva
+	 * @param dia de la reserva
+	 * @param hora de la reserva
+	 * @return Devuelve true si todo ha salido correctamente
+	 */
 	
 	public boolean agregarReservaInstalacion(String IDReserva, String IDInstalacion, String emailUsuario, int anyo, int mes, int dia, int hora) {
 		WebTarget registerUserWebTarget = webTarget.path("server/agregarReservaInstalacion");
@@ -103,6 +126,11 @@ public class ServiceLocator {
 		}
 	}
 	
+	/**Método buscar una reserva en concreto
+	 * LLama al metodo al RemoteFacade del servidor con la URL establecida
+	 * @param IDReserva  identificativo de la reserva del cliente 
+	 * @return Devuelve la reserva en concreto
+	 */
 	public ReservaInstalaciones buscarReservaInstalacion(String IDReserva) {
         WebTarget webTarget4 = webTarget.path("server/getReservaInstalaciones").queryParam("IDReserva", IDReserva);
 		Invocation.Builder invocationBuilder = webTarget4.request(MediaType.APPLICATION_JSON);
@@ -116,6 +144,11 @@ public class ServiceLocator {
 		return r;
     }
 	
+	/**Método obtener todas las instalaciones de la bd
+	 * LLama al metodo al RemoteFacade del servidor con la URL establecida
+	 * @return instalaciones de la bd
+	 */
+	
 	public List<Instalacion> obtenerInstalaciones() {
         WebTarget webTarget4 = webTarget.path("server/getInstalaciones");
 		Invocation.Builder invocationBuilder = webTarget4.request(MediaType.APPLICATION_JSON);
@@ -127,14 +160,21 @@ public class ServiceLocator {
 
 		return instalaciones;
     }
-	
+	/**Método para borrar una reserva
+	 * LLama al metodo al RemoteFacade del servidor con la URL establecida
+	 * @param reserva  que se quiere borrar 
+	 * @return response con borrado de la reserva
+	 */
 	public Response borrarReserva(ReservaInstalaciones reserva) {
 		WebTarget webTarget1 = webTarget.path("server/borrarReservaInstalacion");	
 		Entity<ReservaInstalaciones> entity = Entity.entity(reserva, MediaType.APPLICATION_JSON);
 		Response response = webTarget1.request().post(entity);
 		return response;
 	}
-	
+	/**Método para obtener todas las reservas de la bd
+	 * LLama al metodo al RemoteFacade del servidor con la URL establecida
+	 * @return Devuelve todas las reservas de la bd
+	 */
 	public List<ReservaInstalaciones> obtenerReservas() {
         WebTarget webTarget4 = webTarget.path("server/getReservasInstalaciones");
 		Invocation.Builder invocationBuilder = webTarget4.request(MediaType.APPLICATION_JSON);

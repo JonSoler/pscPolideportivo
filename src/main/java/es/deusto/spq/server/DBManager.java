@@ -388,25 +388,36 @@ public class DBManager {
 		System.out.println(" * Inicializando base de datos");
 		
 		Cliente c1 = new Cliente("43527594", "Manolito", "Manolito", 18, "manolito@gmail.com", "manolito123", false);
-		Cliente c2 = new Cliente("admin", "admin", "admin", 20, "admin@admin.es", "admin", true);
+		Cliente c2 = new Cliente("admin", "admin", "admin", 20, "admin@admin.com", "admin", true);
 		Cliente c3 = new Cliente("43124342", "Copito", "Copito", 24, "copito@gmail.com", "copito123", false);
+		Cliente c4 = new Cliente("36485496", "Juanito", "Juanito", 24, "juanito@gmail.com", "juanito123", false);
 		
-		Instalacion i1 = new Instalacion("001", "Piscina", 50, false);
-		Instalacion i2 = new Instalacion("002", "Campo", 60, false);
+		Instalacion i1 = new Instalacion("001", "Piscina", 20, false);
+		Instalacion i2 = new Instalacion("002", "CampoFutbol", 100, false);
+		Instalacion i3 = new Instalacion("003", "CanchaBalocento", 80, false);
+		Instalacion i4 = new Instalacion("004", "PistaTenis", 90, false);
 		
 		ReservaInstalaciones r1 = new ReservaInstalaciones("R01", "001", "manolito@gmail.com", 2023, 5, 6, 11);
 		ReservaInstalaciones r2 = new ReservaInstalaciones("R02", "002", "manolito@gmail.com", 2022, 3, 7, 14);
 		ReservaInstalaciones r3 = new ReservaInstalaciones("R03", "001", "copito@gmail.com", 2022, 7, 9, 17);
-		ReservaInstalaciones r4 = new ReservaInstalaciones("R04", "002", "copito@gmail.com", 2023, 5, 6, 17);
+		ReservaInstalaciones r4 = new ReservaInstalaciones("R04", "004", "copito@gmail.com", 2023, 5, 6, 17);
+		ReservaInstalaciones r5 = new ReservaInstalaciones("R05", "003", "juanito@gmail.com", 2022, 6, 4, 15);
+		ReservaInstalaciones r6 = new ReservaInstalaciones("R06", "001", "juanito@gmail.com", 2022, 6, 5, 19);
 		try {
 			 store(c1);
 			 store(c2);
 			 store(c3);
+			 store(c4);
 			 store(i1);
 			 store(i2);
+			 store(i3);
+			 store(i4);
 			 store(r1);
 			 store(r2);
 			 store(r3);
+			 store(r4);
+			 store(r5);
+			 store(r6);
 			 
 		} catch (Exception ex) {
 			// TODO: handle exception
