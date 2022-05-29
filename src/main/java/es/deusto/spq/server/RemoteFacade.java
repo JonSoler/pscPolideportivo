@@ -1,15 +1,20 @@
 package es.deusto.spq.server;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 
 import es.deusto.spq.client.Cliente;
+import es.deusto.spq.client.Instalacion;
 import es.deusto.spq.client.ReservaInstalaciones;
 
 @Path("/server")
@@ -50,29 +55,51 @@ public class RemoteFacade implements IRemoteFacade{
 			return Response.status(Response.Status.OK).build();
 		}return Response.status(Response.Status.BAD_REQUEST).build();
 	}
+	
 	@POST
-	@Path("/reservaInstalacion")
+	@Path("/agregarReservaInstalacion")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Override
-	public Response realizarReservaInstalacion(ReservaInstalaciones reserva) {
-		ReservaInstalaciones r = dbmanager.getReserva(reserva.getEmailUsuario());
-		if(r == null) {
-			dbmanager.store(reserva);
-			return Response.status(Response.Status.OK).build();
-		}return Response.status(Response.Status.BAD_REQUEST).build();
-		
+	public Response agregarReservaInstalacion(ReservaInstalaciones r) {
+		dbmanager.store(r);
+		return Response.status(Response.Status.OK).build();
 	}
-	@POST
-	@Path("/ModificarReservaInstalacion")
+	
+	@GET
+    @Path("/getReservaInstalaciones")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ReservaInstalaciones buscarReservaInstalacion(@QueryParam("IDReserva") String IDReserva) {
+        ReservaInstalaciones r = dbmanager.getReservaInstalaciones(IDReserva);
+
+        return r;
+    }
+	
+	@GET
+	@Path("/getInstalaciones")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Override
-	public Response ModificarReservaInstalacion(ReservaInstalaciones reserva) {
-		ReservaInstalaciones r = dbmanager.getReserva(reserva.getEmailUsuario());
-		if(r == null) {
-			dbmanager.store(reserva);
+	public List<Instalacion> obtenerInstalaciones() {
+		List<Instalacion> h = dbmanager.getInstalaciones();
+	
+		return h;
+	}
+	
+	@POST
+	@Path("/borrarReservaInstalacion")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response borrarReserva(ReservaInstalaciones reserva) {
+		ReservaInstalaciones r = dbmanager.getReservaInstalaciones(reserva.getIDReserva());
+		if(r!= null) {
+			dbmanager.borrarReservaInstalacion(reserva);
 			return Response.status(Response.Status.OK).build();
 		}return Response.status(Response.Status.BAD_REQUEST).build();
+	}
+	
+	@GET
+	@Path("/getReservasInstalaciones")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public List<ReservaInstalaciones> obtenerReservas() {
+		List<ReservaInstalaciones> r = dbmanager.getReservasInstalaciones();
 		
+		return r;
 	}
 	
 	

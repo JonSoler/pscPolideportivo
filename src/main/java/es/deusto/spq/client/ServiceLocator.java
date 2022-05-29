@@ -1,12 +1,15 @@
 package es.deusto.spq.client;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -78,13 +81,14 @@ public class ServiceLocator {
 		return 0;
 	}
 	
-	public boolean realizarReservaInstalacion(String IDReserva, String IDInstalacion, String emailUsuario, int anyo, int mes, int dia, int hora) {
-		WebTarget registerUserWebTarget = webTarget.path("server/reservaInstalacion");
+	public boolean agregarReservaInstalacion(String IDReserva, String IDInstalacion, String emailUsuario, int anyo, int mes, int dia, int hora) {
+		WebTarget registerUserWebTarget = webTarget.path("server/agregarReservaInstalacion");
 		ReservaInstalaciones r = new ReservaInstalaciones();
 		r.setIDReserva(IDReserva);
 		r.setIDInstalacion(IDInstalacion);
 		r.setEmailUsuario(emailUsuario);
 		r.setAnyo(anyo);
+		r.setMes(mes);
 		r.setDia(dia);
 		r.setHora(hora);
 		
@@ -98,47 +102,54 @@ public class ServiceLocator {
 			return true;
 		}
 	}
+	
+	public ReservaInstalaciones buscarReservaInstalacion(String IDReserva) {
+        WebTarget webTarget4 = webTarget.path("server/getReservaInstalaciones").queryParam("IDReserva", IDReserva);
+		Invocation.Builder invocationBuilder = webTarget4.request(MediaType.APPLICATION_JSON);
 
-public boolean eliminarInstalacion(String IDReserva, String IDInstalacion, String emailUsuario, int anyo, int mes, int dia, int hora) {
-    WebTarget deleteUserWebTarget = webTarget.path("server/reservaInstalacion");
-    ReservaInstalaciones r = new ReservaInstalaciones();
-    r.setIDReserva(IDReserva);
-    r.setIDInstalacion(IDInstalacion);
-    r.setEmailUsuario(emailUsuario);
-    r.setAnyo(anyo);
-    r.setDia(dia);
-    r.setHora(hora);
+		ReservaInstalaciones r = new ReservaInstalaciones();
+		r.setIDReserva(IDReserva);
 
-    Entity<ReservaInstalaciones> entity = Entity.entity(r, MediaType.APPLICATION_JSON);
-    Response response = deleteUserWebTarget.request().post(entity);
-    if (response.getStatus() != Status.OK.getStatusCode()) {
-        logger.error("Error conectando con el servidor. Codigo: " + response.getStatus());
-        return false;
-    } else {
-        logger.info(" Se ha eliminado correctamente");
-        return true;
+		GenericType<ReservaInstalaciones> genericType = new GenericType<ReservaInstalaciones>() {};
+		r = webTarget4.request(MediaType.APPLICATION_JSON).get(genericType);
+
+		return r;
     }
-}
-public boolean modificarInstalacion(String IDReserva, String IDInstalacion, String emailUsuario, int anyo, int mes, int dia, int hora) {
-    WebTarget modifyUserWebTarget = webTarget.path("server/reservaInstalacion");
-    ReservaInstalaciones r = new ReservaInstalaciones();
-    r.setIDReserva(IDReserva);
-    r.setIDInstalacion(IDInstalacion);
-    r.setEmailUsuario(emailUsuario);
-    r.setAnyo(anyo);
-    r.setDia(dia);
-    r.setHora(hora);
+	
+	public List<Instalacion> obtenerInstalaciones() {
+        WebTarget webTarget4 = webTarget.path("server/getInstalaciones");
+		Invocation.Builder invocationBuilder = webTarget4.request(MediaType.APPLICATION_JSON);
 
-    Entity<ReservaInstalaciones> entity = Entity.entity(r, MediaType.APPLICATION_JSON);
-    Response response = modifyUserWebTarget.request().post(entity);
-    if (response.getStatus() != Status.OK.getStatusCode()) {
-        logger.error("Error conectando con el servidor. Codigo: " + response.getStatus());
-        return false;
-    } else {
-        logger.info(" Se ha modificado correctamente");
-        return true;
+		List<Instalacion> instalaciones = new ArrayList<Instalacion>();
+
+		GenericType<List<Instalacion>> genericType = new GenericType<List<Instalacion>>() {};
+		instalaciones = webTarget4.request(MediaType.APPLICATION_JSON).get(genericType);
+
+		return instalaciones;
     }
-}
+	
+	public Response borrarReserva(ReservaInstalaciones reserva) {
+		WebTarget webTarget1 = webTarget.path("server/borrarReservaInstalacion");	
+		Entity<ReservaInstalaciones> entity = Entity.entity(reserva, MediaType.APPLICATION_JSON);
+		Response response = webTarget1.request().post(entity);
+		return response;
+	}
+	
+	public List<ReservaInstalaciones> obtenerReservas() {
+        WebTarget webTarget4 = webTarget.path("server/getReservasInstalaciones");
+		Invocation.Builder invocationBuilder = webTarget4.request(MediaType.APPLICATION_JSON);
+
+		List<ReservaInstalaciones> reservas = new ArrayList<ReservaInstalaciones>();
+
+		GenericType<List<ReservaInstalaciones>> genericType = new GenericType<List<ReservaInstalaciones>>() {};
+		reservas = webTarget4.request(MediaType.APPLICATION_JSON).get(genericType);
+
+		return reservas;
+    }
+	
+
+
+
 
 
 }

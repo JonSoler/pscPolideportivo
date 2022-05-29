@@ -89,14 +89,13 @@ public class VentanaLogin extends JFrame {
 		botonIniciarSesion.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				@SuppressWarnings("deprecation")
-				int valido = controller.loginPolideportivo(textoUsuario.getText(), textoContrasenya.getText());
+				int valido = controller.loginPolideportivo(textoUsuario.getText(), new String(textoContrasenya.getPassword()));
 				if (valido == 1) {
 					VentanaReservaInstalaciones menu;
 					try {
 						String usuario = textoUsuario.getText();
 						emailDelUsuario = usuario;
-						usuarioLogin();
+						//usuarioLogin();
 						menu = new VentanaReservaInstalaciones(controller);
 						menu.setVisible(true);
 						VentanaLogin.this.dispose();
@@ -113,7 +112,7 @@ public class VentanaLogin extends JFrame {
 					try {
 						String usuario = textoUsuario.getText();
 						emailDelUsuario = usuario;
-						usuarioLogin();
+						//usuarioLogin();
 						admin = new VentanaAdmin(controller);
 						admin.setVisible(true);
 						VentanaLogin.this.dispose();
@@ -145,7 +144,7 @@ public class VentanaLogin extends JFrame {
 
 	}
 
-	public static String emailUsuario() {
+	/*public static String emailUsuario() {
 		p = new Properties();
 		try {
 			File f = new File("prop.properties");
@@ -162,8 +161,8 @@ public class VentanaLogin extends JFrame {
 		}
 		return emailDelAnteriorUsuario;
 	}
-
-	private void usuarioLogin() {
+	*/
+	/*private void usuarioLogin() {
 		p.put("email", emailDelUsuario);
 		try {
 			p.store(new FileWriter("prop.properties"), "" + new Date());
@@ -172,7 +171,7 @@ public class VentanaLogin extends JFrame {
 		}
 		emailDelAnteriorUsuario = emailDelUsuario;
 	}
-
+	*/
 	public VentanaLogin(boolean b) {
 		this(null);
 	}
