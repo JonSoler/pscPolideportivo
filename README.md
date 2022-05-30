@@ -22,7 +22,7 @@ https://github.com/JonSoler/pscPolideportivo.git
 
 ## 🔧 Instalación y ejecución
 
-El primer paso será abrir nuesta herramienta de base de datos como "XAMPP" o "MySQL Workbench" y ejecutar el archivo "BDpolideportivo.sql" que aparece en la carpeta src/main/sql-BD con un usuario root. De esta manera, crearemos el esqueleto de la base de datos del proyecto.
+El primer paso será abrir nuesta herramienta de base de datos como "XAMPP" o "MySQL Workbench" con el usuario y contraseña "root". De esta manera, crearemos el esqueleto de la base de datos del proyecto.
 
 Para la ejecución del proyecto es necesario abrir dos instancias del "cmd" (Símbolo del sistema) y ejecutar los siguientes comandos sin cerrar en ningún momento ninguna de las instancias:
  
@@ -48,8 +48,8 @@ A continuación se detallan las herramientas utilizadas para crear el proyecto:
 * [Log4j]           (http://logging.apache.org/log4j/1.2/) - Logger
 * [JaCoCo]          (https://www.eclemma.org/jacoco/) - Analisis de teses y cobertura
 * [Doxygen]         (https://www.doxygen.nl/) - Generar documentación
-* [GitHub Actions]  (https://github.com/features/actions) - Integración continua
-* [Sonarcloud]      (http://logging.apache.org/log4j/1.2/) - Bugs y vulnerabilidades
+* [GitHub Actions]  (https://github.com/features/actions/) - Integración continua
+* [Sonarcloud]      (https://sonarcloud.io/) - Bugs y vulnerabilidades
 
 
 ## ✒️ Autores
