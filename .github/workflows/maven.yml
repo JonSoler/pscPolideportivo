@@ -42,3 +42,7 @@ jobs:
           tag_name: ${{ steps.version.outputs.TAG_NAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Github Action genshdoc
+        id: action-genshdoc
+        uses: vargiuscuola/genshdoc@master
