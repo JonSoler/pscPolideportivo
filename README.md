@@ -52,6 +52,7 @@ A continuación se detallan las herramientas utilizadas para crear el proyecto:
 * [Sonarcloud]      (https://sonarcloud.io/) - Bugs y vulnerabilidades
 * [Mockito]         (https://site.mockito.org/) - Tests de integración con metodos de la BD
 * [ContiPerf]       (https://mvnrepository.com/artifact/org.databene/contiperf) - Tests de rendimiento con metodos de la BD
+* [GitHub Pages]    (https://pages.github.com/) - Web para visualizar la documentación generada (se encuentra en el siguiente link https://jonsoler.github.io/pscPolideportivo/)
 
 
 ## ✒️ Autores
