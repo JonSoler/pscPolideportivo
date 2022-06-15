@@ -3,10 +3,13 @@ package es.deusto.spq.client;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import es.deusto.spq.client.ReservaInstalaciones;
 
 public class TestReservaInstalacion {
+	
 	ReservaInstalaciones a = new ReservaInstalaciones("3b", "2A", "PedroGarcia@gmail.com", 2022, 3, 2, 10);
 	ReservaInstalaciones b= new ReservaInstalaciones();
 	@Test
