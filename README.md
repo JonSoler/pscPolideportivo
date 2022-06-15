@@ -22,21 +22,21 @@ https://github.com/JonSoler/pscPolideportivo.git
 
 ## 🔧 Instalación y ejecución
 
-El primer paso será abrir nuesta herramienta de base de datos como "XAMPP" o "MySQL Workbench" con el usuario y contraseña "root". De esta manera, crearemos el esqueleto de la base de datos del proyecto.
+El primer paso será abrir nuesta herramienta de base de datos como "XAMPP" o "MySQL Workbench" con el usuario y contraseña "root". De esta manera, crearemos el esqueleto de la base de datos del proyecto. (Hemos mantenido el usuario root para el correcto funcionamiento de los métodos utilizados en relación a la BD. Creamos un nuevo usuario y alguna funcionalidades no funcionan correctamente, aún dando todos los privilégios que tiene root)
 
 Para la ejecución del proyecto es necesario abrir dos instancias del "cmd" (Símbolo del sistema) y ejecutar los siguientes comandos sin cerrar en ningún momento ninguna de las instancias:
  
 Para ejecutar el servidor:
 
-* "mvn clean" 
-* "mvn compile"
-* "mvn datanucleus:enhance" (Este comando solo es necesario realizarlo la primera vez que se realiza este proceso)
-* "mvn datanucleus:schema-create" (Este comando solo es necesario realizarlo la primera vez que se realiza este proceso, sirve para crear las tablas en la BD)
-* "mvn exec:java -PServer"
+* mvn clean
+* mvn compile
+* mvn datanucleus:enhance (Este comando solo es necesario realizarlo la primera vez que se realiza este proceso)
+* mvn datanucleus:schema-create (Este comando solo es necesario realizarlo la primera vez que se realiza este proceso, sirve para crear las tablas en la BD)
+* mvn exec:java -PServer
 
 Para ejecutar el cliente (en la otra instancia del cmd):
 
-* "mvn exec:java -PClient"
+* mvn exec:java -PClient
 
 
 ## 🛠️ Construido con
@@ -47,9 +47,11 @@ A continuación se detallan las herramientas utilizadas para crear el proyecto:
 * [Apache Maven]    (https://maven.apache.org/) - Manejador de dependencias
 * [Log4j]           (http://logging.apache.org/log4j/1.2/) - Logger
 * [JaCoCo]          (https://www.eclemma.org/jacoco/) - Analisis de teses y cobertura
-* [Doxygen]         (https://www.doxygen.nl/) - Generar documentación
+* [Doxygen]         (https://www.doxygen.nl/) - Generar documentación (abrir index.html en el siguiente directorio: src\main\resources\html)
 * [GitHub Actions]  (https://github.com/features/actions/) - Integración continua
 * [Sonarcloud]      (https://sonarcloud.io/) - Bugs y vulnerabilidades
+* [Mockito]         (https://site.mockito.org/) - Tests de integración con metodos de la BD
+* [ContiPerf]       (https://mvnrepository.com/artifact/org.databene/contiperf) - Tests de rendimiento con metodos de la BD
 
 
 ## ✒️ Autores
