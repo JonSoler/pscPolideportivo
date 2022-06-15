@@ -44,6 +44,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       #github-action genshdoc
+      - name: Generate Documentation
+        uses: vargiuscuola/genshdoc@v1.0
+      
       - name: Github Action genshdoc
         id: action-genshdoc
         uses: vargiuscuola/genshdoc@master
