@@ -1,0 +1,137 @@
+\hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller}{}\doxysection{es.\+deusto.\+spq.\+client.\+Controller Class Reference}
+\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller}\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a104dbdd39424e2c063a2b7ecdb26466a}{Controller}} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{Service\+Locator}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{service\+Locator}})
+\item 
+int \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5f74547f8993214e74a4755b3f26651c}{login\+Polideportivo}} (String email, String contrasenya)
+\item 
+boolean \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ae6d87a24826c4aa0f09a4a0b6d41bf47}{agregar\+Cliente\+Polideportivo}} (String DNI, String nombre, String apellido, int edad, String email, String contrasenya, boolean Admin)
+\item 
+boolean \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a530e010f9555784e90987c5bb9af66ff}{agregar\+Reserva\+Instalacion}} (String IDReserva, String IDInstalacion, String email\+Usuario, int anyo, int mes, int dia, int hora)
+\item 
+List$<$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} $>$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5df177071d810f3a5c7e7d37ff35e7bc}{obtener\+Instalaciones}} ()
+\item 
+List$<$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} $>$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a1efe1dc8f5a616813962f20dbb6f4a9a}{obtener\+Reservas}} ()
+\item 
+Response \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ac95cc6b3ee5621ebba48bfc57ee0f43d}{borrar\+Reserva}} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} reserva)
+\item 
+\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa837f189985c78f8fb016c486f9fe133}{buscar\+Reserva\+Instalacion}} (String IDReserva)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{Service\+Locator}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{service\+Locator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00007}{7}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a104dbdd39424e2c063a2b7ecdb26466a}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a104dbdd39424e2c063a2b7ecdb26466a}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily es.\+deusto.\+spq.\+client.\+Controller.\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{Service\+Locator}}}]{service\+Locator }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00011}{11}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ae6d87a24826c4aa0f09a4a0b6d41bf47}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ae6d87a24826c4aa0f09a4a0b6d41bf47}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!agregarClientePolideportivo@{agregarClientePolideportivo}}
+\index{agregarClientePolideportivo@{agregarClientePolideportivo}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{agregarClientePolideportivo()}{agregarClientePolideportivo()}}
+{\footnotesize\ttfamily boolean es.\+deusto.\+spq.\+client.\+Controller.\+agregar\+Cliente\+Polideportivo (\begin{DoxyParamCaption}\item[{String}]{DNI,  }\item[{String}]{nombre,  }\item[{String}]{apellido,  }\item[{int}]{edad,  }\item[{String}]{email,  }\item[{String}]{contrasenya,  }\item[{boolean}]{Admin }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00019}{19}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a530e010f9555784e90987c5bb9af66ff}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a530e010f9555784e90987c5bb9af66ff}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!agregarReservaInstalacion@{agregarReservaInstalacion}}
+\index{agregarReservaInstalacion@{agregarReservaInstalacion}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{agregarReservaInstalacion()}{agregarReservaInstalacion()}}
+{\footnotesize\ttfamily boolean es.\+deusto.\+spq.\+client.\+Controller.\+agregar\+Reserva\+Instalacion (\begin{DoxyParamCaption}\item[{String}]{IDReserva,  }\item[{String}]{IDInstalacion,  }\item[{String}]{email\+Usuario,  }\item[{int}]{anyo,  }\item[{int}]{mes,  }\item[{int}]{dia,  }\item[{int}]{hora }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00023}{23}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ac95cc6b3ee5621ebba48bfc57ee0f43d}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ac95cc6b3ee5621ebba48bfc57ee0f43d}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!borrarReserva@{borrarReserva}}
+\index{borrarReserva@{borrarReserva}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{borrarReserva()}{borrarReserva()}}
+{\footnotesize\ttfamily Response es.\+deusto.\+spq.\+client.\+Controller.\+borrar\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}}}]{reserva }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00035}{35}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa837f189985c78f8fb016c486f9fe133}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa837f189985c78f8fb016c486f9fe133}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!buscarReservaInstalacion@{buscarReservaInstalacion}}
+\index{buscarReservaInstalacion@{buscarReservaInstalacion}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{buscarReservaInstalacion()}{buscarReservaInstalacion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} es.\+deusto.\+spq.\+client.\+Controller.\+buscar\+Reserva\+Instalacion (\begin{DoxyParamCaption}\item[{String}]{IDReserva }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00039}{39}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5f74547f8993214e74a4755b3f26651c}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5f74547f8993214e74a4755b3f26651c}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!loginPolideportivo@{loginPolideportivo}}
+\index{loginPolideportivo@{loginPolideportivo}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{loginPolideportivo()}{loginPolideportivo()}}
+{\footnotesize\ttfamily int es.\+deusto.\+spq.\+client.\+Controller.\+login\+Polideportivo (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{contrasenya }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00015}{15}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5df177071d810f3a5c7e7d37ff35e7bc}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5df177071d810f3a5c7e7d37ff35e7bc}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!obtenerInstalaciones@{obtenerInstalaciones}}
+\index{obtenerInstalaciones@{obtenerInstalaciones}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{obtenerInstalaciones()}{obtenerInstalaciones()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} $>$ es.\+deusto.\+spq.\+client.\+Controller.\+obtener\+Instalaciones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00027}{27}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a1efe1dc8f5a616813962f20dbb6f4a9a}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a1efe1dc8f5a616813962f20dbb6f4a9a}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!obtenerReservas@{obtenerReservas}}
+\index{obtenerReservas@{obtenerReservas}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{obtenerReservas()}{obtenerReservas()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{Reserva\+Instalaciones}} $>$ es.\+deusto.\+spq.\+client.\+Controller.\+obtener\+Reservas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00031}{31}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}\label{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}} 
+\index{es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}!serviceLocator@{serviceLocator}}
+\index{serviceLocator@{serviceLocator}!es.deusto.spq.client.Controller@{es.deusto.spq.client.Controller}}
+\doxysubsubsection{\texorpdfstring{serviceLocator}{serviceLocator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{Service\+Locator}} es.\+deusto.\+spq.\+client.\+Controller.\+service\+Locator}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_8java_source_l00009}{9}} of file \mbox{\hyperlink{_controller_8java_source}{Controller.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/es/deusto/spq/client/\mbox{\hyperlink{_controller_8java}{Controller.\+java}}\end{DoxyCompactItemize}

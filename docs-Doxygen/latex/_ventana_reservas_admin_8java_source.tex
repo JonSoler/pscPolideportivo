@@ -1,0 +1,101 @@
+\hypertarget{_ventana_reservas_admin_8java_source}{}\doxysection{Ventana\+Reservas\+Admin.\+java}
+\label{_ventana_reservas_admin_8java_source}\index{src/main/java/es/deusto/spq/client/gui/VentanaReservasAdmin.java@{src/main/java/es/deusto/spq/client/gui/VentanaReservasAdmin.java}}
+\mbox{\hyperlink{_ventana_reservas_admin_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.client.gui;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00003}00003 \textcolor{keyword}{import} java.awt.Color;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00004}00004 \textcolor{keyword}{import} java.awt.EventQueue;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00005}00005 \textcolor{keyword}{import} java.awt.Font;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00006}00006 \textcolor{keyword}{import} java.awt.SystemColor;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00007}00007 \textcolor{keyword}{import} java.awt.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00008}00008 \textcolor{keyword}{import} java.awt.event.ActionListener;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00009}00009 \textcolor{keyword}{import} java.lang.ModuleLayer.Controller;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00010}00010 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00012}00012 \textcolor{keyword}{import} javax.swing.DefaultListModel;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00013}00013 \textcolor{keyword}{import} javax.swing.JButton;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00014}00014 \textcolor{keyword}{import} javax.swing.JComboBox;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00015}00015 \textcolor{keyword}{import} javax.swing.JFrame;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00016}00016 \textcolor{keyword}{import} javax.swing.JLabel;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00017}00017 \textcolor{keyword}{import} javax.swing.JList;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00018}00018 \textcolor{keyword}{import} javax.swing.JPanel;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00019}00019 \textcolor{keyword}{import} javax.swing.border.EmptyBorder;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00021}00021 \textcolor{keyword}{import} es.deusto.spq.client.Instalacion;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00022}00022 \textcolor{keyword}{import} es.deusto.spq.client.ReservaInstalaciones;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00023}00023 \textcolor{keyword}{import} es.deusto.spq.client.ServiceLocator;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00025}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin}{00025}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin}{VentanaReservasAdmin}} \textcolor{keyword}{extends} JFrame \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00026}00026     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{long} serialVersionUID = 1L;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00028}00028     \textcolor{keyword}{private} JPanel contentpane;}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00029}00029     }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00030}00030     \textcolor{keyword}{private} JList listaReservas = \textcolor{keyword}{new} JList();}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00031}00031     \textcolor{keyword}{private} JButton botonAtras = \textcolor{keyword}{new} JButton();}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00032}00032     \textcolor{keyword}{private} DefaultListModel contenidoReservas = \textcolor{keyword}{new} DefaultListModel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00033}00033     }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00035}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin_ad6f7f32a2f6515d967fd5e8194dc4997}{00035}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin_ad6f7f32a2f6515d967fd5e8194dc4997}{VentanaReservasAdmin}}(\textcolor{keyword}{final} es.deusto.spq.client.Controller controller) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00036}00036         }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00037}00037         contentpane = \textcolor{keyword}{new} JPanel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00038}00038         contentpane.setBorder(\textcolor{keyword}{new} EmptyBorder(10, 10, 5, 5));}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00039}00039         this.setContentPane(contentpane);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00040}00040         contentpane.setLayout(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00041}00041         }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00042}00042         JLabel lTitulo = \textcolor{keyword}{new} JLabel(\textcolor{stringliteral}{"{}Reservas realizadas"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00043}00043         lTitulo.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Forte"{}}, Font.BOLD, 40));}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00044}00044         lTitulo.setBounds(346, 39, 404, 42);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00045}00045         contentpane.add(lTitulo);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00046}00046         }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00047}00047         botonAtras.setForeground(Color.BLACK);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00048}00048         botonAtras.setBackground(SystemColor.inactiveCaptionBorder);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00049}00049         botonAtras.setBounds(22, 492, 90, 42);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00050}00050         botonAtras.setText(\textcolor{stringliteral}{"{}Atrás"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00051}00051         botonAtras.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00052}00052         contentpane.add(botonAtras);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00053}00053         }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00054}00054         contenidoReservas = \textcolor{keyword}{new} DefaultListModel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00055}00055         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{ServiceLocator}} serviceLocator = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{ServiceLocator}}();}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00056}00056         ArrayList<ReservaInstalaciones> reservas = (ArrayList<ReservaInstalaciones>) controller.obtenerReservas();}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00057}00057         }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00058}00058         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reserva : reservas) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00059}00059             contenidoReservas.addElement(reserva);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00061}00061         \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00062}00062         listaReservas.setModel(contenidoReservas);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00063}00063         listaReservas.setBounds(153, 101, 753, 386);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00064}00064         contentpane.add(listaReservas);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00065}00065                 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00066}00066         botonAtras.addActionListener(\textcolor{keyword}{new} ActionListener() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00067}00067             @Override}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00068}00068             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00069}00069                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_admin}{VentanaAdmin}} cliente = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_admin}{VentanaAdmin}}(controller);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00070}00070                 cliente.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00071}00071                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin}{VentanaReservasAdmin}}.this.dispose();                }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00072}00072             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00073}00073         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00075}00075         }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00076}00076         this.setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00077}00077         this.setSize(1060, 600);}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00078}00078         this.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00079}00079         setLocationRelativeTo(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00080}00080         this.setTitle(\textcolor{stringliteral}{"{}PSC Polideportivo Admin -\/ Reservas"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00082}00082     }
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00083}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin_ab9f0899d8f5be5b61869fd915cda8430}{00083}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin_ab9f0899d8f5be5b61869fd915cda8430}{main}}(String[] args) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00084}00084         EventQueue.invokeLater(\textcolor{keyword}{new} Runnable() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00085}00085             \textcolor{keyword}{public} \textcolor{keywordtype}{void} run() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00086}00086                 \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00087}00087                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin}{VentanaReservasAdmin}} window = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reservas_admin_ad6f7f32a2f6515d967fd5e8194dc4997}{VentanaReservasAdmin}}(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00088}00088                     window.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00089}00089                 \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00090}00090                     e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00091}00091                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00092}00092             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00093}00093         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00094}00094     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reservas_admin_8java_source_l00095}00095 \}}
+
+\end{DoxyCode}

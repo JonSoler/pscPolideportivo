@@ -1,0 +1,236 @@
+\hypertarget{_ventana_registro_8java_source}{}\doxysection{Ventana\+Registro.\+java}
+\label{_ventana_registro_8java_source}\index{src/main/java/es/deusto/spq/client/gui/VentanaRegistro.java@{src/main/java/es/deusto/spq/client/gui/VentanaRegistro.java}}
+\mbox{\hyperlink{_ventana_registro_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.client.gui;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00003}00003 \textcolor{keyword}{import} java.awt.BorderLayout;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00004}00004 \textcolor{keyword}{import} java.awt.Color;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00005}00005 \textcolor{keyword}{import} java.awt.Font;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00006}00006 \textcolor{keyword}{import} java.awt.SystemColor;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00007}00007 \textcolor{keyword}{import} java.awt.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00008}00008 \textcolor{keyword}{import} java.awt.event.ActionListener;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00009}00009 \textcolor{keyword}{import} java.lang.ModuleLayer.Controller;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00011}00011 \textcolor{keyword}{import} javax.swing.JButton;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00012}00012 \textcolor{keyword}{import} javax.swing.JFrame;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00013}00013 \textcolor{keyword}{import} javax.swing.JLabel;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00014}00014 \textcolor{keyword}{import} javax.swing.JOptionPane;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00015}00015 \textcolor{keyword}{import} javax.swing.JPanel;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00016}00016 \textcolor{keyword}{import} javax.swing.JPasswordField;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00017}00017 \textcolor{keyword}{import} javax.swing.JTextField;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00018}00018 \textcolor{keyword}{import} javax.swing.border.EmptyBorder;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00020}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{00020}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}} \textcolor{keyword}{extends} JFrame \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00025}00025     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{long} serialVersionUID = 1L;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00027}00027     \textcolor{keyword}{private} JPanel contentpane;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00028}00028     \textcolor{keyword}{private} JLabel labelDNI = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00029}00029     \textcolor{keyword}{private} JLabel labelNombre = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00030}00030     \textcolor{keyword}{private} JLabel labelApellido = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00031}00031     \textcolor{keyword}{private} JLabel labelEdad = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00032}00032     \textcolor{keyword}{private} JLabel labelEmail = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00033}00033     \textcolor{keyword}{private} JLabel labelContrasenya = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00034}00034     \textcolor{keyword}{private} JLabel labelConfirmarContrasenya = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00035}00035     \textcolor{keyword}{private} JTextField textoDNI = \textcolor{keyword}{new} JTextField();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00036}00036     \textcolor{keyword}{private} JTextField textoNombre = \textcolor{keyword}{new} JTextField();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00037}00037     \textcolor{keyword}{private} JTextField textoApellido = \textcolor{keyword}{new} JTextField();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00038}00038     \textcolor{keyword}{private} JTextField textoEdad = \textcolor{keyword}{new} JTextField();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00039}00039     \textcolor{keyword}{private} JTextField textoEmail = \textcolor{keyword}{new} JTextField();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00040}00040     \textcolor{keyword}{private} JPasswordField textoContrasenya = \textcolor{keyword}{new} JPasswordField();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00041}00041     \textcolor{keyword}{private} JPasswordField textoConfirmarContrasenya = \textcolor{keyword}{new} JPasswordField();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00042}00042     \textcolor{keyword}{private} JButton botonRegistrarse = \textcolor{keyword}{new} JButton();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00043}00043     \textcolor{keyword}{private} JButton botonIniciarSesion = \textcolor{keyword}{new} JButton();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00045}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro_1_1_j_number_text_field}{00045}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro_1_1_j_number_text_field}{JNumberTextField}} \textcolor{keyword}{extends} JTextField \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00046}00046         \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{long} serialVersionUID = 1L;}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00049}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro_a503b03bafa613e9f190158bf04d2a006}{00049}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro_a503b03bafa613e9f190158bf04d2a006}{VentanaRegistro}}(\textcolor{keyword}{final} es.deusto.spq.client.Controller controller) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00051}00051         contentpane = \textcolor{keyword}{new} JPanel();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00052}00052         contentpane.setBorder(\textcolor{keyword}{new} EmptyBorder(5, 5, 5, 5));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00053}00053         setContentPane(contentpane);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00054}00054         contentpane.setLayout(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00055}00055         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00057}00057         JLabel labelTitle = \textcolor{keyword}{new} JLabel(\textcolor{stringliteral}{"{}PSC Polideportivo"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00058}00058         labelTitle.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Forte"{}}, Font.BOLD, 40));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00059}00059         labelTitle.setBounds(44, 35, 359, 50);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00060}00060         contentpane.add(labelTitle);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00062}00062         labelDNI.setText(\textcolor{stringliteral}{"{}DNI:"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00063}00063         labelDNI.setOpaque(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00064}00064         labelDNI.setBounds(108, 124, 44, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00065}00065         labelDNI.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00066}00066         contentpane.add(labelDNI, BorderLayout.SOUTH);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00067}00067         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00068}00068         labelNombre.setText(\textcolor{stringliteral}{"{}Nombre:"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00069}00069         labelNombre.setBounds(99, 175, 71, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00070}00070         labelNombre.setOpaque(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00071}00071         labelNombre.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00072}00072         contentpane.add(labelNombre);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00073}00073         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00074}00074         labelApellido.setText(\textcolor{stringliteral}{"{}Apellido:"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00075}00075         labelApellido.setBounds(98, 225, 61, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00076}00076         labelApellido.setOpaque(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00077}00077         labelApellido.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00078}00078         contentpane.add(labelApellido);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00079}00079                 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00080}00080         labelEdad.setText(\textcolor{stringliteral}{"{} Edad:"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00081}00081         labelEdad.setBounds(107, 275, 99, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00082}00082         labelEdad.setOpaque(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00083}00083         labelEdad.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00084}00084         contentpane.add(labelEdad);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00085}00085         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00086}00086         labelEmail.setText(\textcolor{stringliteral}{"{}Email:"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00087}00087         labelEmail.setBounds(104, 325, 71, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00088}00088         labelEmail.setOpaque(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00089}00089         labelEmail.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00090}00090         contentpane.add(labelEmail);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00091}00091         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00092}00092         labelContrasenya.setText(\textcolor{stringliteral}{"{}Contraseña:"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00093}00093         labelContrasenya.setBounds(86, 375, 120, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00094}00094         labelContrasenya.setOpaque(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00095}00095         labelContrasenya.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00096}00096         contentpane.add(labelContrasenya);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00097}00097         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00098}00098         labelConfirmarContrasenya.setText(\textcolor{stringliteral}{"{}Confirmar contraseña:"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00099}00099         labelConfirmarContrasenya.setBounds(50, 425, 156, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00100}00100         labelConfirmarContrasenya.setOpaque(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00101}00101         labelConfirmarContrasenya.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00102}00102         contentpane.add(labelConfirmarContrasenya);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00103}00103         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00104}00104         botonRegistrarse.setForeground(SystemColor.text);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00105}00105         botonRegistrarse.setBackground(\textcolor{keyword}{new} Color(0, 51, 255));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00106}00106         botonRegistrarse.setBounds(227, 500, 143, 32);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00107}00107         botonRegistrarse.setText(\textcolor{stringliteral}{"{}Resgistrarse"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00108}00108         botonRegistrarse.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00109}00109         contentpane.add(botonRegistrarse);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00110}00110         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00111}00111         botonIniciarSesion.setBackground(SystemColor.inactiveCaptionBorder);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00112}00112         botonIniciarSesion.setBounds(47, 500, 143, 32);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00113}00113         botonIniciarSesion.setText(\textcolor{stringliteral}{"{}<< Iniciar sesión"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00114}00114         botonIniciarSesion.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 16));}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00115}00115         contentpane.add(botonIniciarSesion);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00117}00117         textoDNI.setBounds(214, 125, 143, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00118}00118         contentpane.add(textoDNI);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00120}00120         textoNombre.setBounds(214, 175, 143, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00121}00121         contentpane.add(textoNombre);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00123}00123         textoApellido.setBounds(216, 225, 143, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00124}00124         contentpane.add(textoApellido);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00125}00125         }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00126}00126         textoEdad.setBounds(214, 275, 143, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00127}00127         contentpane.add(textoEdad);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00129}00129         textoEmail.setBounds(214, 325, 143, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00130}00130         contentpane.add(textoEmail);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00132}00132         textoContrasenya.setBounds(214, 375, 143, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00133}00133         contentpane.add(textoContrasenya);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00135}00135         textoConfirmarContrasenya.setBounds(214, 425, 143, 20);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00136}00136         contentpane.add(textoConfirmarContrasenya);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00138}00138         botonRegistrarse.addActionListener(\textcolor{keyword}{new} ActionListener() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00139}00139             @Override}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00140}00140             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00141}00141                 \textcolor{comment}{// TODO Auto-\/generated method stub}}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00142}00142                 String dni = textoDNI.getText().toString();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00143}00143                 String nombre = textoNombre.getText().toString();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00144}00144                 String apellido = textoApellido.getText().toString();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00145}00145                 String edad = textoEdad.getText().toString();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00146}00146                 \textcolor{keywordtype}{boolean} RegistroCorrecto = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00147}00147                 \textcolor{keywordtype}{boolean} error = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00149}00149                 \textcolor{keywordflow}{if} (textoDNI.getText().equals(\textcolor{stringliteral}{"{}"{}}) || textoNombre.getText().equals(\textcolor{stringliteral}{"{}"{}}) || textoApellido.getText().equals(\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00150}00150                         || textoEmail.getText().equals(\textcolor{stringliteral}{"{}"{}}) || textoContrasenya.toString().equals(\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00151}00151                         || textoConfirmarContrasenya.toString().equals(\textcolor{stringliteral}{"{}"{}})) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00153}00153                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Por favor, rellene todos los campos."{}}, \textcolor{stringliteral}{"{}Error"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00154}00154                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.repaint();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00155}00155                     error = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00156}00156 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00157}00157                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dni.matches(\textcolor{stringliteral}{"{}\string^[a-\/zA-\/Z]+\$"{}})) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00159}00159                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}DNI no válida."{}}, \textcolor{stringliteral}{"{}Error"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00160}00160                     error = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00161}00161                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.repaint();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00163}00163                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nombre.matches(\textcolor{stringliteral}{"{}\string^[0-\/9]+\$"{}})) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00165}00165                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Nombre no válida."{}}, \textcolor{stringliteral}{"{}Error"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00166}00166                     error = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00167}00167                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.repaint();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00169}00169                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (apellido.matches(\textcolor{stringliteral}{"{}\string^[0-\/9]+\$"{}})) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00171}00171                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Apellido no válida."{}}, \textcolor{stringliteral}{"{}Error"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00172}00172                     error = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00173}00173                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.repaint();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00174}00174                     }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00175}00175                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (edad.matches(\textcolor{stringliteral}{"{}\string^[0-\/99]"{}})) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00177}00177                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Edad no válida."{}}, \textcolor{stringliteral}{"{}Error"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00178}00178                     error = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00179}00179                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.repaint();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00181}00181                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!textoEmail.getText().contains(\textcolor{stringliteral}{"{}@"{}}) || !(textoEmail.getText().contains(\textcolor{stringliteral}{"{}.es"{}})}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00182}00182                         || textoEmail.getText().contains(\textcolor{stringliteral}{"{}.com"{}}) || textoEmail.getText().contains(\textcolor{stringliteral}{"{}.eus"{}}))) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00184}00184                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Email no válida."{}}, \textcolor{stringliteral}{"{}Error"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00185}00185                     error = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00186}00186                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.repaint();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00188}00188                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!String.valueOf(textoContrasenya.getPassword())}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00189}00189                         .equals(String.valueOf(textoConfirmarContrasenya.getPassword()))) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00191}00191                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Las contraseñas no coinciden."{}}, \textcolor{stringliteral}{"{}Error"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00192}00192                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.repaint();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00193}00193                     error = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00195}00195                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!error) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00197}00197                     controller.agregarClientePolideportivo(textoDNI.getText(), textoNombre.getText(), textoApellido.getText(), Integer.valueOf(textoEdad.getText()),}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00198}00198                             textoEmail.getText(), String.valueOf(textoContrasenya.getPassword()), \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00199}00199                     }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00200}00200                     RegistroCorrecto= \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00201}00201                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00203}00203                 \textcolor{keywordflow}{if} (RegistroCorrecto) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00204}00204                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Cliente registrado correctamente."{}}, \textcolor{stringliteral}{"{}Nuevo cliente"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00205}00205                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_login}{VentanaLogin}} inicio = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_login}{VentanaLogin}}(controller);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00206}00206                     inicio.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00207}00207                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.dispose();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00209}00209                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!error) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00210}00210                     JOptionPane.showMessageDialog(\textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00211}00211                             \textcolor{stringliteral}{"{}El email introducido ya ha sido registrado, pruebe a iniciar sesión."{}}, \textcolor{stringliteral}{"{}Error"{}},JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00212}00212                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_registro}{VentanaRegistro}}.this.repaint();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00213}00213                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00214}00214             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00215}00215         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00216}00216 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00217}00217         botonIniciarSesion.addActionListener(\textcolor{keyword}{new} ActionListener() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00218}00218             @Override}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00219}00219             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00220}00220                 \textcolor{comment}{// TODO Auto-\/generated method stub}}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00221}00221                 \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_login}{VentanaLogin}}(controller);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00222}00222                 dispose();}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00223}00223             }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00224}00224             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00225}00225         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00227}00227         setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00228}00228         setSize(440, 600);}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00229}00229         setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00230}00230         setLocationRelativeTo(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00231}00231         setTitle(\textcolor{stringliteral}{"{}Registrarse como nuevo cliente"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00232}00232     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_registro_8java_source_l00233}00233 \}}
+
+\end{DoxyCode}

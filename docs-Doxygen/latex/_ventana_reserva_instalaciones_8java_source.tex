@@ -1,0 +1,257 @@
+\hypertarget{_ventana_reserva_instalaciones_8java_source}{}\doxysection{Ventana\+Reserva\+Instalaciones.\+java}
+\label{_ventana_reserva_instalaciones_8java_source}\index{src/main/java/es/deusto/spq/client/gui/VentanaReservaInstalaciones.java@{src/main/java/es/deusto/spq/client/gui/VentanaReservaInstalaciones.java}}
+\mbox{\hyperlink{_ventana_reserva_instalaciones_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.client.gui;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00003}00003 \textcolor{keyword}{import} java.awt.Color;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00004}00004 \textcolor{keyword}{import} java.awt.EventQueue;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00005}00005 \textcolor{keyword}{import} java.awt.Font;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00006}00006 \textcolor{keyword}{import} java.awt.SystemColor;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00007}00007 \textcolor{keyword}{import} java.awt.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00008}00008 \textcolor{keyword}{import} java.awt.event.ActionListener;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00009}00009 \textcolor{keyword}{import} java.io.FileInputStream;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00010}00010 \textcolor{keyword}{import} java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00011}00011 \textcolor{keyword}{import} java.lang.ModuleLayer.Controller;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00012}00012 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00013}00013 \textcolor{keyword}{import} java.util.Properties;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00015}00015 \textcolor{keyword}{import} javax.swing.DefaultListModel;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00016}00016 \textcolor{keyword}{import} javax.swing.JButton;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00017}00017 \textcolor{keyword}{import} javax.swing.JComboBox;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00018}00018 \textcolor{keyword}{import} javax.swing.JFrame;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00019}00019 \textcolor{keyword}{import} javax.swing.JLabel;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00020}00020 \textcolor{keyword}{import} javax.swing.JList;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00021}00021 \textcolor{keyword}{import} javax.swing.JOptionPane;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00022}00022 \textcolor{keyword}{import} javax.swing.JPanel;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00023}00023 \textcolor{keyword}{import} javax.swing.border.EmptyBorder;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00026}00026 \textcolor{keyword}{import} es.deusto.spq.client.Instalacion;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00027}00027 \textcolor{keyword}{import} es.deusto.spq.client.ReservaInstalaciones;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00028}00028 \textcolor{keyword}{import} es.deusto.spq.client.ServiceLocator;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00030}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones}{00030}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones}{VentanaReservaInstalaciones}} \textcolor{keyword}{extends} JFrame \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00031}00031     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{long} serialVersionUID = 1L;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00033}00033     \textcolor{keyword}{private} JPanel contentpane;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00034}00034     \textcolor{keyword}{private} JList listaInstalaciones = \textcolor{keyword}{new} JList();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00035}00035     \textcolor{keyword}{private} JComboBox comboBoxAnyo = \textcolor{keyword}{new} JComboBox();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00036}00036     \textcolor{keyword}{private} JComboBox comboBoxMes = \textcolor{keyword}{new} JComboBox();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00037}00037     \textcolor{keyword}{private} JComboBox comboBoxDia = \textcolor{keyword}{new} JComboBox();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00038}00038     \textcolor{keyword}{private} JComboBox comboBoxHora = \textcolor{keyword}{new} JComboBox();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00039}00039     \textcolor{keyword}{private} JButton botonReservar = \textcolor{keyword}{new} JButton();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00040}00040     \textcolor{keyword}{private} JButton botonAtras = \textcolor{keyword}{new} JButton();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00041}00041     \textcolor{keyword}{private} DefaultListModel contenidoInstalaciones = \textcolor{keyword}{new} DefaultListModel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00042}00042     }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00044}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones_a8ef1b760f25db9fe5c8414ccf4885042}{00044}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones_a8ef1b760f25db9fe5c8414ccf4885042}{VentanaReservaInstalaciones}}(\textcolor{keyword}{final} es.deusto.spq.client.Controller controller) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00045}00045         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00046}00046         contentpane = \textcolor{keyword}{new} JPanel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00047}00047         contentpane.setBorder(\textcolor{keyword}{new} EmptyBorder(10, 10, 5, 5));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00048}00048         this.setContentPane(contentpane);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00049}00049         contentpane.setLayout(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00050}00050         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00051}00051         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00053}00053         JLabel lTitulo = \textcolor{keyword}{new} JLabel(\textcolor{stringliteral}{"{}Realizar una reserva"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00054}00054         lTitulo.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Forte"{}}, Font.BOLD, 40));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00055}00055         lTitulo.setBounds(345, 35, 401, 42);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00056}00056         contentpane.add(lTitulo);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00057}00057         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00058}00058         JLabel lFiltrarPorFecha = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00059}00059         lFiltrarPorFecha.setText(\textcolor{stringliteral}{"{}Introducir datos"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00060}00060         lFiltrarPorFecha.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 23));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00061}00061         lFiltrarPorFecha.setBounds(556, 95, 300, 48);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00062}00062         contentpane.add(lFiltrarPorFecha);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00063}00063         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00064}00064         JLabel lAnyo = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00065}00065         lAnyo.setText(\textcolor{stringliteral}{"{}Año"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00066}00066         lAnyo.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00067}00067         lAnyo.setBounds(556, 137, 61, 48);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00068}00068         contentpane.add(lAnyo);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00069}00069         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00070}00070         JLabel lMes = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00071}00071         lMes.setText(\textcolor{stringliteral}{"{}Mes"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00072}00072         lMes.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00073}00073         lMes.setBounds(556, 211, 61, 48);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00074}00074         contentpane.add(lMes);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00075}00075         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00076}00076         JLabel lDia = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00077}00077         lDia.setText(\textcolor{stringliteral}{"{}Día"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00078}00078         lDia.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00079}00079         lDia.setBounds(556, 287, 61, 48);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00080}00080         contentpane.add(lDia);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00081}00081         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00082}00082         JLabel lHora = \textcolor{keyword}{new} JLabel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00083}00083         lHora.setText(\textcolor{stringliteral}{"{}Hora"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00084}00084         lHora.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00085}00085         lHora.setBounds(556, 360, 61, 48);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00086}00086         contentpane.add(lHora);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00087}00087         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00088}00088         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00089}00089         comboBoxAnyo.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.PLAIN, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00090}00090         comboBoxAnyo.setBounds(556, 183, 190, 30);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00091}00091         comboBoxAnyo.addItem(\textcolor{stringliteral}{"{}Seleccione el año"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00092}00092         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 2022; i <= 2024; i++) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00093}00093             comboBoxAnyo.addItem(Integer.toString(i));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00094}00094         \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00095}00095         contentpane.add(comboBoxAnyo);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00096}00096         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00097}00097         comboBoxMes.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.PLAIN, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00098}00098         comboBoxMes.setBounds(556, 257, 190, 30);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00099}00099         comboBoxMes.addItem(\textcolor{stringliteral}{"{}Seleccione el mes"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00100}00100         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i <= 12; i++) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00101}00101             comboBoxMes.addItem(Integer.toString(i));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00102}00102         \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00103}00103         contentpane.add(comboBoxMes);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00104}00104         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00105}00105         comboBoxDia.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.PLAIN, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00106}00106         comboBoxDia.setBounds(556, 331, 190, 30);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00107}00107         comboBoxDia.addItem(\textcolor{stringliteral}{"{}Seleccione el día"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00108}00108         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i <= 31; i++) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00109}00109             comboBoxDia.addItem(Integer.toString(i));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00110}00110         \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00111}00111         contentpane.add(comboBoxDia);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00112}00112         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00113}00113         comboBoxHora.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.PLAIN, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00114}00114         comboBoxHora.setBounds(556, 404, 190, 30);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00115}00115         comboBoxHora.addItem(\textcolor{stringliteral}{"{}Seleccione la hora"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00116}00116         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 8; i <= 23; i++) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00117}00117             comboBoxHora.addItem(Integer.toString(i));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00118}00118         \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00119}00119         contentpane.add(comboBoxHora);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00120}00120         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00121}00121         botonReservar.setForeground(SystemColor.text);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00122}00122         botonReservar.setBackground(\textcolor{keyword}{new} Color(0, 51, 255));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00123}00123         botonReservar.setBounds(804, 257, 190, 61);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00124}00124         botonReservar.setText(\textcolor{stringliteral}{"{}Reservar"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00125}00125         botonReservar.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 25));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00126}00126         contentpane.add(botonReservar);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00127}00127         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00128}00128         botonAtras.setForeground(Color.BLACK);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00129}00129         botonAtras.setBackground(SystemColor.inactiveCaptionBorder);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00130}00130         botonAtras.setBounds(22, 492, 90, 42);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00131}00131         botonAtras.setText(\textcolor{stringliteral}{"{}Atrás"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00132}00132         botonAtras.setFont(\textcolor{keyword}{new} Font(\textcolor{stringliteral}{"{}Goudy Old Style"{}}, Font.BOLD, 19));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00133}00133         contentpane.add(botonAtras);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00134}00134         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00135}00135         contenidoInstalaciones = \textcolor{keyword}{new} DefaultListModel();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00136}00136         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{ServiceLocator}} serviceLocator = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{ServiceLocator}}();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00137}00137         ArrayList<Instalacion> instalaciones = (ArrayList<Instalacion>) controller.obtenerInstalaciones();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00138}00138         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00139}00139         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} instalacion : instalaciones) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00140}00140             contenidoInstalaciones.addElement(instalacion);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00142}00142         \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00143}00143         listaInstalaciones.setModel(contenidoInstalaciones);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00144}00144         listaInstalaciones.setBounds(81, 95, 447, 386);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00145}00145         contentpane.add(listaInstalaciones);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00146}00146         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00147}00147         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00148}00148         botonReservar.addActionListener(\textcolor{keyword}{new} ActionListener() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00149}00149             @Override}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00150}00150             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00151}00151                 ArrayList<ReservaInstalaciones> reservas = (ArrayList<ReservaInstalaciones>) controller.obtenerReservas();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00153}00153                 String IDReserva = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00154}00154                 String IDInstalacion = \textcolor{stringliteral}{"{}"{}};              }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00155}00155                 String emailUsuario = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00156}00156                 \textcolor{keywordtype}{int} dia = 0;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00157}00157                 \textcolor{keywordtype}{int} mes = 0;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00158}00158                 \textcolor{keywordtype}{int} anyo = 0;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00159}00159                 \textcolor{keywordtype}{int} hora = 0;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00160}00160             }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00161}00161                 \textcolor{keywordtype}{int} nReserva = reservas.size() + 1;}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00162}00162                 \textcolor{keywordflow}{if} (nReserva < 10) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00163}00163                     IDReserva = \textcolor{stringliteral}{"{}R0"{}} + Integer.toString(nReserva);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00164}00164                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00165}00165                     IDReserva = \textcolor{stringliteral}{"{}R"{}} + Integer.toString(nReserva);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00166}00166                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00168}00168                 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00169}00169                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 16; i < 19; i++) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00170}00170                     IDInstalacion = IDInstalacion + listaInstalaciones.getSelectedValue().toString().charAt(i);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00171}00171                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00172}00172                 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00173}00173                 Properties objetoP = \textcolor{keyword}{new} Properties();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00174}00174                 \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00175}00175                     objetoP.load(\textcolor{keyword}{new} FileInputStream(\textcolor{stringliteral}{"{}prop.properties"{}}));}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00176}00176                 \} \textcolor{keywordflow}{catch} (IOException e2) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00177}00177                     e2.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00178}00178                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00179}00179                 \textcolor{keywordflow}{if} (objetoP.getProperty(\textcolor{stringliteral}{"{}email"{}}) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00180}00180                     emailUsuario = objetoP.getProperty(\textcolor{stringliteral}{"{}email"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00181}00181                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00182}00182                 \textcolor{keywordflow}{if} (comboBoxDia.getSelectedItem().toString() != \textcolor{stringliteral}{"{}Seleccione el dia"{}}) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00183}00183                     dia = Integer.parseInt(comboBoxDia.getSelectedItem().toString());}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00184}00184                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00185}00185                 \textcolor{keywordflow}{if} (comboBoxMes.getSelectedItem().toString() != \textcolor{stringliteral}{"{}Seleccione el mes"{}}) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00186}00186                     mes = Integer.parseInt(comboBoxMes.getSelectedItem().toString());}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00187}00187                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00188}00188                 \textcolor{keywordflow}{if} (comboBoxAnyo.getSelectedItem().toString() != \textcolor{stringliteral}{"{}Seleccione el a�o"{}}) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00189}00189                     anyo = Integer.parseInt(comboBoxAnyo.getSelectedItem().toString());}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00190}00190                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00191}00191                 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00192}00192                 \textcolor{keywordflow}{if} (comboBoxHora.getSelectedItem().toString() != \textcolor{stringliteral}{"{}Seleccione la hora"{}}) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00193}00193                     hora = Integer.parseInt(comboBoxHora.getSelectedItem().toString());}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00194}00194                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00195}00195                 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00196}00196                 \textcolor{keywordtype}{boolean} condicion = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00197}00197                 \textcolor{keywordflow}{if} (listaInstalaciones.isSelectionEmpty() != \textcolor{keyword}{true} \&\& dia != 0 \&\& mes != 0 \&\& anyo != 0) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00198}00198                     condicion = \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones_a0b6ab673dde5b8f906e0569d0634162a}{existeReserva}}(reservas, IDInstalacion, anyo, mes, dia, hora);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00199}00199                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00200}00200                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}No se ha podido registrar la reserva."{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00201}00201                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00202}00202                 \textcolor{keywordflow}{if} (condicion == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00203}00203                     condicion = controller.agregarReservaInstalacion(IDReserva, IDInstalacion, emailUsuario, anyo, mes, dia, hora);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00204}00204                     JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Reserva registrada correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00205}00205                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00206}00206                 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00207}00207                 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00208}00208             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00209}00209         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00210}00210                 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00211}00211         botonAtras.addActionListener(\textcolor{keyword}{new} ActionListener() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00212}00212             @Override}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00213}00213             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00214}00214                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente}{VentanaCliente}} cliente = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_cliente}{VentanaCliente}}(controller);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00215}00215                 cliente.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00216}00216                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones}{VentanaReservaInstalaciones}}.this.dispose();              }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00217}00217             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00218}00218         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00219}00219 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00220}00220         }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00221}00221         this.setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00222}00222         this.setSize(1060, 600);}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00223}00223         this.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00224}00224         setLocationRelativeTo(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00225}00225         this.setTitle(\textcolor{stringliteral}{"{}Reservas"{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00226}00226     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00227}00227     }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00228}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones_a0b6ab673dde5b8f906e0569d0634162a}{00228}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones_a0b6ab673dde5b8f906e0569d0634162a}{existeReserva}}(ArrayList<ReservaInstalaciones> reservas, String IDInstalacion, \textcolor{keywordtype}{int} anyo, \textcolor{keywordtype}{int} mes, \textcolor{keywordtype}{int} dia, \textcolor{keywordtype}{int} hora) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00229}00229         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reserva : reservas) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00230}00230             \textcolor{keywordflow}{if} (IDInstalacion.equals(reserva.getIDInstalacion()) \&\& dia == reserva.getDia() \&\& mes == reserva.getMes() \&\& anyo == reserva.getAnyo()\&\& hora == reserva.getHora()) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00231}00231                 JOptionPane.showMessageDialog(\textcolor{keyword}{null}, \textcolor{stringliteral}{"{}Instalacion ocupada."{}});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00232}00232                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};               }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00233}00233             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00234}00234         \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00236}00236         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00237}00237     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00238}00238     }
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00239}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones_aa5a7fd638c12ee13201d0575a26fe4fa}{00239}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones_aa5a7fd638c12ee13201d0575a26fe4fa}{main}}(String[] args) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00240}00240         EventQueue.invokeLater(\textcolor{keyword}{new} Runnable() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00241}00241             \textcolor{keyword}{public} \textcolor{keywordtype}{void} run() \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00242}00242                 \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00243}00243                     \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones}{VentanaReservaInstalaciones}} window = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_ventana_reserva_instalaciones_a8ef1b760f25db9fe5c8414ccf4885042}{VentanaReservaInstalaciones}}(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00244}00244                     window.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00245}00245                 \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00246}00246                     e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00247}00247                 \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00248}00248             \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00249}00249         \});}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00250}00250     \}}
+\DoxyCodeLine{\Hypertarget{_ventana_reserva_instalaciones_8java_source_l00251}00251 \}}
+
+\end{DoxyCode}

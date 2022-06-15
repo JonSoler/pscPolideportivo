@@ -1,0 +1,79 @@
+\hypertarget{_instalacion_8java_source}{}\doxysection{Instalacion.\+java}
+\label{_instalacion_8java_source}\index{src/main/java/es/deusto/spq/client/Instalacion.java@{src/main/java/es/deusto/spq/client/Instalacion.java}}
+\mbox{\hyperlink{_instalacion_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.client;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00003}00003 \textcolor{keyword}{import} javax.jdo.annotations.Inheritance;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00004}00004 \textcolor{keyword}{import} javax.jdo.annotations.InheritanceStrategy;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00005}00005 \textcolor{keyword}{import} javax.jdo.annotations.PersistenceCapable;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00006}00006 \textcolor{keyword}{import} javax.jdo.annotations.PrimaryKey;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00008}00008 @PersistenceCapable}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00009}00009 @Inheritance(strategy=InheritanceStrategy.NEW\_TABLE)}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00010}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{00010}} public class \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion}{Instalacion}} \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00011}00011     @PrimaryKey}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00012}00012     \textcolor{keyword}{private} String ID;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00013}00013     \textcolor{keyword}{private} String nombre;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00014}00014     \textcolor{keyword}{private} \textcolor{keywordtype}{double} precio;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00015}00015     \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} libre;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00016}00016     }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00024}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a37e155a9194f7af2b703e3808d75525b}{00024}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a37e155a9194f7af2b703e3808d75525b}{Instalacion}}() \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00025}00025         super();}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00026}00026         this.ID = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00027}00027         this.nombre = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00028}00028         this.precio = 5;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00029}00029         this.libre = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00031}00031     }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00032}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_afc8699fec02efe23926cc3b55f7a112f}{00032}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_afc8699fec02efe23926cc3b55f7a112f}{Instalacion}}(String ID, String nombre, \textcolor{keywordtype}{double} precio, \textcolor{keywordtype}{boolean} libre) \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00033}00033         super();}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00034}00034         this.ID = ID;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00035}00035         this.nombre = nombre;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00036}00036         this.precio = precio;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00037}00037         this.libre = libre;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00039}00039     }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00040}00040     }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00041}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a72ce6e65e2e0efb58843b080b829f170}{00041}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a72ce6e65e2e0efb58843b080b829f170}{getID}}() \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00042}00042         \textcolor{keywordflow}{return} ID;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00043}00043     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00045}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a2a9f1861a5100c2beac66db69623bfaa}{00045}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a2a9f1861a5100c2beac66db69623bfaa}{setID}}(String iD) \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00046}00046         ID = iD;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00049}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a9d7df8179e346c97f021dda5b1699e84}{00049}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a9d7df8179e346c97f021dda5b1699e84}{getNombre}}() \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00050}00050         \textcolor{keywordflow}{return} nombre;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00053}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a99882d23a912c6040cf0ce93a145faae}{00053}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a99882d23a912c6040cf0ce93a145faae}{setNombre}}(String nombre) \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00054}00054         this.nombre = nombre;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00057}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a30faf12c2a3dae7e99289ce233c0a765}{00057}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a30faf12c2a3dae7e99289ce233c0a765}{getPrecio}}() \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00058}00058         \textcolor{keywordflow}{return} precio;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00061}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a68ac13632aaa0a072d070bf280229e28}{00061}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a68ac13632aaa0a072d070bf280229e28}{setPrecio}}(\textcolor{keywordtype}{double} precio) \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00062}00062         this.precio = precio;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00065}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_ae6b29531f2084ebed14c72b7050da309}{00065}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_ae6b29531f2084ebed14c72b7050da309}{isLibre}}() \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00066}00066         \textcolor{keywordflow}{return} libre;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00069}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_af30d1e0adefcbe192efdf074295e7931}{00069}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_af30d1e0adefcbe192efdf074295e7931}{setLibre}}(\textcolor{keywordtype}{boolean} libre) \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00070}00070         this.libre = libre;}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00071}00071     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00073}00073     }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00074}00074     @Override}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00075}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a9f1894761d1fd1c4b1863af356876e3e}{00075}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_instalacion_a9f1894761d1fd1c4b1863af356876e3e}{toString}}() \{}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00076}00076         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Instalacion [ID="{}} + ID + \textcolor{stringliteral}{"{}, nombre="{}} + nombre + \textcolor{stringliteral}{"{}, precio="{}} + precio + \textcolor{stringliteral}{"{}, libre="{}} + libre + \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00078}00078     }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_instalacion_8java_source_l00080}00080 \}}
+
+\end{DoxyCode}
