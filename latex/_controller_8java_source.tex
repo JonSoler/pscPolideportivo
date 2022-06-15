@@ -1,0 +1,49 @@
+\hypertarget{_controller_8java_source}{}\doxysection{Controller.\+java}
+\label{_controller_8java_source}\index{src/main/java/es/deusto/spq/client/Controller.java@{src/main/java/es/deusto/spq/client/Controller.java}}
+\mbox{\hyperlink{_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.client;}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00003}00003 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00005}00005 \textcolor{keyword}{import} javax.ws.rs.core.Response;}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00007}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller}{00007}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller}{Controller}} \{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00008}00008     }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00009}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{00009}} \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{ServiceLocator}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}};}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00010}00010     }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00011}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a104dbdd39424e2c063a2b7ecdb26466a}{00011}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a104dbdd39424e2c063a2b7ecdb26466a}{Controller}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator}{ServiceLocator}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}}) \{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00012}00012         this.serviceLocator = \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}};}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00013}00013     \}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00014}00014     }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00015}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5f74547f8993214e74a4755b3f26651c}{00015}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5f74547f8993214e74a4755b3f26651c}{loginPolideportivo}}(String email, String contrasenya)\{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00016}00016         \textcolor{keywordflow}{return} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a7ac5d7dd498f63094b9fc4ade6513f7f}{loginPolideportivo}}(email, contrasenya);}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00017}00017     \}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00018}00018     }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00019}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ae6d87a24826c4aa0f09a4a0b6d41bf47}{00019}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ae6d87a24826c4aa0f09a4a0b6d41bf47}{agregarClientePolideportivo}}(String DNI, String nombre, String apellido, \textcolor{keywordtype}{int} edad, String email, String contrasenya, \textcolor{keywordtype}{boolean} Admin)\{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00020}00020         \textcolor{keywordflow}{return} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a041c71605dcec333017d13103f33fec8}{agregarClientePolideportivo}}(DNI, nombre, apellido, edad, email, contrasenya, Admin);}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00022}00022     }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00023}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a530e010f9555784e90987c5bb9af66ff}{00023}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a530e010f9555784e90987c5bb9af66ff}{agregarReservaInstalacion}}(String IDReserva, String IDInstalacion, String emailUsuario, \textcolor{keywordtype}{int} anyo, \textcolor{keywordtype}{int} mes, \textcolor{keywordtype}{int} dia, \textcolor{keywordtype}{int} hora) \{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00024}00024         \textcolor{keywordflow}{return} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_aa19ebf41d86b8064b4636da3c57d23dd}{agregarReservaInstalacion}}(IDReserva, IDInstalacion, emailUsuario, anyo, mes, dia , hora);}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00026}00026     \textcolor{comment}{//obtener todas las instalaciones}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00027}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5df177071d810f3a5c7e7d37ff35e7bc}{00027}}     \textcolor{keyword}{public} List<Instalacion> \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a5df177071d810f3a5c7e7d37ff35e7bc}{obtenerInstalaciones}}() \{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00028}00028         \textcolor{keywordflow}{return} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a445947aa0b1ab341732b24b063677816}{obtenerInstalaciones}}();}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00030}00030     \textcolor{comment}{//obtener todas las reservas}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00031}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a1efe1dc8f5a616813962f20dbb6f4a9a}{00031}}     \textcolor{keyword}{public} List<ReservaInstalaciones> \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_a1efe1dc8f5a616813962f20dbb6f4a9a}{obtenerReservas}}() \{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00032}00032         \textcolor{keywordflow}{return} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a0d06d3a31726f5fc9d246b697e2646c2}{obtenerReservas}}();}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00034}00034     \textcolor{comment}{//borrar reserva}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00035}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ac95cc6b3ee5621ebba48bfc57ee0f43d}{00035}}     \textcolor{keyword}{public} Response \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_ac95cc6b3ee5621ebba48bfc57ee0f43d}{borrarReserva}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reserva) \{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00036}00036         \textcolor{keywordflow}{return} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a36a9388c2b01d683c7f40b67644da743}{borrarReserva}}(reserva);}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00037}00037     \textcolor{comment}{//obtener una reserva en concreto}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00039}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa837f189985c78f8fb016c486f9fe133}{00039}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa837f189985c78f8fb016c486f9fe133}{buscarReservaInstalacion}}(String IDReserva) \{}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00040}00040         \textcolor{keywordflow}{return} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_controller_aa24e8d1c6f62e7ddd8fa0263478eff5c}{serviceLocator}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_service_locator_a71cad9413f1faf1b6d5fa04ed93c3e6b}{buscarReservaInstalacion}}(IDReserva);}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_controller_8java_source_l00043}00043 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['testcliente_0',['TestCliente',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html',1,'es::deusto::spq::client']]],
+  ['testcliente_2ejava_1',['TestCliente.java',['../_test_cliente_8java.html',1,'']]],
+  ['testgetadmin_2',['testGetAdmin',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#ad4a6e4b43073e3d9bb56af93b1b52172',1,'es::deusto::spq::client::TestCliente']]],
+  ['testgetapellido_3',['testGetApellido',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a8a555395d32bea4648fe61b11ec8a66d',1,'es::deusto::spq::client::TestCliente']]],
+  ['testgetcontrsenya_4',['testGetContrsenya',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a0688870a08d4e8e121c0d8cc5fd6e045',1,'es::deusto::spq::client::TestCliente']]],
+  ['testgetdni_5',['testGetDNI',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a70fffc889959544e916fa1454d4792d0',1,'es::deusto::spq::client::TestCliente']]],
+  ['testgetemail_6',['testGetEmail',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#ad0f3fec0a35a40d9d4b00c79a00fde37',1,'es::deusto::spq::client::TestCliente']]],
+  ['testgetid_7',['testGetID',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html#ac9075daa6867d79534eb87a728987f05',1,'es::deusto::spq::client::TestInstalacion']]],
+  ['testgetlibre_8',['testGetlibre',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html#a4320785778a0c11cf29964de5bc8971c',1,'es::deusto::spq::client::TestInstalacion']]],
+  ['testgetnombre_9',['testGetNombre',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a019e4ab679fce00484d2ec2a66de764f',1,'es.deusto.spq.client.TestCliente.testGetNombre()'],['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html#a5c6de7262fddaad89ffe1ddd5127948e',1,'es.deusto.spq.client.TestInstalacion.testGetNombre()']]],
+  ['testgetprecio_10',['testGetPrecio',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html#aa261f1a84665f31ab8df807b11c8d0d6',1,'es::deusto::spq::client::TestInstalacion']]],
+  ['testinstalacion_11',['TestInstalacion',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html',1,'es::deusto::spq::client']]],
+  ['testinstalacion_2ejava_12',['TestInstalacion.java',['../_test_instalacion_8java.html',1,'']]],
+  ['testreservainstalacion_13',['TestReservaInstalacion',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_reserva_instalacion.html',1,'es::deusto::spq::client']]],
+  ['testreservainstalacion_2ejava_14',['TestReservaInstalacion.java',['../_test_reserva_instalacion_8java.html',1,'']]],
+  ['testsetadmin_15',['testSetAdmin',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a645bac719bad0dd03cacda625494a1e1',1,'es::deusto::spq::client::TestCliente']]],
+  ['testsetapellido_16',['testSetApellido',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a4da09eb4b9dc276517c13bd2d8579e94',1,'es::deusto::spq::client::TestCliente']]],
+  ['testsetcontrsenya_17',['testSetContrsenya',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a750bf7c903e6eaae8de26fb2449b92c8',1,'es::deusto::spq::client::TestCliente']]],
+  ['testsetdni_18',['testSetDNI',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a80a2601f84857b1de32c2e0b57990dd6',1,'es::deusto::spq::client::TestCliente']]],
+  ['testsetemail_19',['testSetEmail',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a1f0c78adbba15a52f9e7f027f3ca213b',1,'es::deusto::spq::client::TestCliente']]],
+  ['testsetid_20',['testSetID',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html#a556503d152d505153e6067cb13a90db6',1,'es::deusto::spq::client::TestInstalacion']]],
+  ['testsetlibre_21',['testSetlibre',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html#a5967c6eee4bca0282d4479414947728b',1,'es::deusto::spq::client::TestInstalacion']]],
+  ['testsetnombre_22',['testSetNombre',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_cliente.html#a5e69f01f4b82d1acfb9a5fceb452476b',1,'es.deusto.spq.client.TestCliente.testSetNombre()'],['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html#ac86333ce97382c7c3f79ad0f56ca2038',1,'es.deusto.spq.client.TestInstalacion.testSetNombre()']]],
+  ['testsetprecio_23',['testSetPrecio',['../classes_1_1deusto_1_1spq_1_1client_1_1_test_instalacion.html#a1db6747d02c9648651fe8044bb2f83eb',1,'es::deusto::spq::client::TestInstalacion']]],
+  ['tostring_24',['toString',['../classes_1_1deusto_1_1spq_1_1client_1_1_cliente.html#ab62bb0c6cb3da3bdff735a3718713b4c',1,'es.deusto.spq.client.Cliente.toString()'],['../classes_1_1deusto_1_1spq_1_1client_1_1_instalacion.html#a9f1894761d1fd1c4b1863af356876e3e',1,'es.deusto.spq.client.Instalacion.toString()'],['../classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones.html#a5be00de97c42f66ba742e9ddffc599f4',1,'es.deusto.spq.client.ReservaInstalaciones.toString()']]]
+];

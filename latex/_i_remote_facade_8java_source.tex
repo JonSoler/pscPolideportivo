@@ -1,0 +1,28 @@
+\hypertarget{_i_remote_facade_8java_source}{}\doxysection{IRemote\+Facade.\+java}
+\label{_i_remote_facade_8java_source}\index{src/main/java/es/deusto/spq/server/IRemoteFacade.java@{src/main/java/es/deusto/spq/server/IRemoteFacade.java}}
+\mbox{\hyperlink{_i_remote_facade_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.server;}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00003}00003 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00005}00005 \textcolor{keyword}{import} javax.ws.rs.core.Response;}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00007}00007 \textcolor{keyword}{import} es.deusto.spq.client.Cliente;}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00008}00008 \textcolor{keyword}{import} es.deusto.spq.client.Instalacion;}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00009}00009 \textcolor{keyword}{import} es.deusto.spq.client.ReservaInstalaciones;}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00011}\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade}{00011}} \textcolor{keyword}{public} \textcolor{keyword}{interface }\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade}{IRemoteFacade}} \{}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00012}00012     }
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00013}\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_ab1a9fba11d854aed4815fbab39c47805}{00013}}     \textcolor{keyword}{public} Response \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_ab1a9fba11d854aed4815fbab39c47805}{loginPolideportivo}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} cliente);}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00014}\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_a359bba35a7b3a97d38799d50d1d53b7e}{00014}}     \textcolor{keyword}{public} Response \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_a359bba35a7b3a97d38799d50d1d53b7e}{agregarClientePolideportivo}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_cliente}{Cliente}} cliente);}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00015}\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_a733ce9921884dada961c2e93732044de}{00015}}     \textcolor{keyword}{public} Response \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_a733ce9921884dada961c2e93732044de}{agregarReservaInstalacion}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} r);}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00016}\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_af17abdb40656027a99fffee8b1447f36}{00016}}     \textcolor{keyword}{public} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_af17abdb40656027a99fffee8b1447f36}{buscarReservaInstalacion}}(String IDInstalacion);}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00017}\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_a990812fd1cd5b9c5c87a8f5f426d8383}{00017}}     \textcolor{keyword}{public} List<Instalacion> \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_a990812fd1cd5b9c5c87a8f5f426d8383}{obtenerInstalaciones}}();}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00018}\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_a0eb21ff861df81822b5434cd887b0651}{00018}}     \textcolor{keyword}{public} Response \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_a0eb21ff861df81822b5434cd887b0651}{borrarReserva}}(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1client_1_1_reserva_instalaciones}{ReservaInstalaciones}} reserva);}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00019}\mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_ab1afa29998ab9b58fb8ebcd138887720}{00019}}     \textcolor{keyword}{public} List<ReservaInstalaciones> \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1server_1_1_i_remote_facade_ab1afa29998ab9b58fb8ebcd138887720}{obtenerReservas}}();}
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00020}00020     }
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_i_remote_facade_8java_source_l00022}00022 \}}
+
+\end{DoxyCode}

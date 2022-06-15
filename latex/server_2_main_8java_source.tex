@@ -1,0 +1,47 @@
+\hypertarget{server_2_main_8java_source}{}\doxysection{Main.\+java}
+\label{server_2_main_8java_source}\index{src/main/java/es/deusto/spq/server/Main.java@{src/main/java/es/deusto/spq/server/Main.java}}
+\mbox{\hyperlink{server_2_main_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00001}00001 \textcolor{keyword}{package }es.deusto.spq.server;}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00003}00003 \textcolor{keyword}{import} java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00004}00004 \textcolor{keyword}{import} java.net.URI;}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00006}00006 \textcolor{keyword}{import} org.glassfish.grizzly.http.server.HttpServer;}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00007}00007 \textcolor{keyword}{import} org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00008}00008 \textcolor{keyword}{import} org.glassfish.jersey.server.ResourceConfig;}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00010}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main}{00010}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main}{Main}} \{}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00012}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_acff2ade4e7b4e7974053e4c2b2f503a7}{00012}}     \textcolor{keyword}{public} \textcolor{keyword}{static} HttpServer \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_acff2ade4e7b4e7974053e4c2b2f503a7}{startServer}}() \{}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00013}00013         \textcolor{keyword}{final} ResourceConfig rc = \textcolor{keyword}{new} ResourceConfig().packages(\textcolor{stringliteral}{"{}es.deusto.spq"{}});}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00014}00014         \textcolor{keywordflow}{return} GrizzlyHttpServerFactory.createHttpServer(URI.create(\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_aa5e0336d67ab5abf95326f6d75e7e644}{getURL}}()), rc);}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00015}00015     \}}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00016}00016     }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00017}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_aa5e0336d67ab5abf95326f6d75e7e644}{00017}}     \textcolor{keyword}{public} \textcolor{keyword}{static} String \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_aa5e0336d67ab5abf95326f6d75e7e644}{getURL}}() \{}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00018}00018         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_get_properties}{GetProperties}} properties = \textcolor{keyword}{new} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_get_properties}{GetProperties}}();}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00019}00019         String url = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00021}00021         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00022}00022             url = properties.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_get_properties_a6782b25e95ba55721dbbdeeb3fdb37b3}{getURL}}();}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00023}00023         \} \textcolor{keywordflow}{catch} (IOException e2) \{}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00024}00024             e2.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00025}00025         \}}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00026}00026         \textcolor{keywordflow}{return} url;}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00029}\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_acfd7bd44499e7a6462271fd5aefee074}{00029}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_acfd7bd44499e7a6462271fd5aefee074}{main}}(String[] args) \textcolor{keywordflow}{throws} IOException \{}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00030}00030         \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager}{DBManager}}.\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_d_b_manager_aeba63d6311724d730cdd6dcdfa13dbba}{getInstance}}();}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00032}00032         \textcolor{keyword}{final} HttpServer server = \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_acff2ade4e7b4e7974053e4c2b2f503a7}{startServer}}();}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00033}00033         System.out.println(String.format(}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00034}00034                 \textcolor{stringliteral}{"{}Jersey app started with WADL available at "{}} + \textcolor{stringliteral}{"{}\%sapplication.wadl\(\backslash\)nHit enter to stop it..."{}},}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00035}00035                 \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1server_1_1_main_aa5e0336d67ab5abf95326f6d75e7e644}{getURL}}()));}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00036}00036         System.in.read();}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00037}00037         server.stop();}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{server_2_main_8java_source_l00041}00041 \}}
+
+\end{DoxyCode}
